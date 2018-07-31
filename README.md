@@ -21,6 +21,12 @@ It is really easy! Just drag and drop file into the app and voila!
 
 Alternatively you can add VirusTotal Uploader to file content menu and click on file and select "Scan with VirusTotal".
 
+## Contributing
+If you have any idea how to make this app better, please create pull request. If you find any bug, please create issue.
+
+## Help
+If you want to help this project, please **star this repo**.
+
 ## TODO
 
  - Make file splitter to upload files larger than 150M
