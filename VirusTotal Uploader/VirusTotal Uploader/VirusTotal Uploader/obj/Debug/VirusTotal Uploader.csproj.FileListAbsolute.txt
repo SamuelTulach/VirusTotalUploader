@@ -13,18 +13,3 @@ C:\Users\Administrator\Desktop\VirusTotal Uploader\VirusTotal Uploader\VirusTota
 C:\Users\Administrator\Desktop\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Debug\VirusTotal Uploader.csproj.CopyComplete
 C:\Users\Administrator\Desktop\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Administrator\Desktop\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Debug\VirusTotal Uploader.exe.config
-C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Debug\VirusTotal Uploader.exe
-C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Debug\VirusTotal Uploader.pdb
-C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Debug\RestSharp.dll
-C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Debug\VirusTotal Uploader.csprojAssemblyReference.cache
-C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Debug\VirusTotal_Uploader.Form1.resources
-C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Debug\VirusTotal_Uploader.Properties.Resources.resources
-C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Debug\VirusTotal_Uploader.Settings.resources
-C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Debug\VirusTotal Uploader.csproj.GenerateResource.cache
-C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Debug\VirusTotal Uploader.csproj.CoreCompileInputs.cache
-C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Debug\VirusTotal Uploader.csproj.CopyComplete
-C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Debug\VirusTotal Uploader.exe
-C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Debug\VirusTotal Uploader.pdb
