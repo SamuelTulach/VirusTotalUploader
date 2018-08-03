@@ -21,6 +21,8 @@ It is really easy! Just drag and drop file into the app and voila!
 
 Alternatively you can add VirusTotal Uploader to file content menu and click on file and select "Scan with VirusTotal".
 
+![usage](https://i.imgur.com/1IZu0Gs.gif)
+
 ## Contributing
 If you have any idea how to make this app better, please create pull request. If you find any bug, please create issue.
 

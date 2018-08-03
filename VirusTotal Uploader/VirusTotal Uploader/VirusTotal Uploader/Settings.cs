@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -68,6 +69,74 @@ along with this program. If not, see < https://www.gnu.org/licenses/>.","About V
         private void button2_Click(object sender, EventArgs e)
         {
             Process.Start(AppDomain.CurrentDomain.BaseDirectory + "settings.txt");
+        }
+
+        private void Settings_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private const string MenuName = "*\\shell\\UploaderMenuOption";
+        private const string Command = "*\\shell\\UploaderMenuOption\\command";
+        public void RegisterContentMenu()
+        {
+            RegistryKey regmenu = null;
+            RegistryKey regcmd = null;
+            try
+            {
+                regmenu = Registry.ClassesRoot.CreateSubKey(MenuName);
+                if (regmenu != null)
+                    regmenu.SetValue("", "Scan with VirusTotal");
+                regcmd = Registry.ClassesRoot.CreateSubKey(Command);
+                if (regcmd != null)
+                    regcmd.SetValue("", System.Reflection.Assembly.GetEntryAssembly().Location + " %1");
+                MessageBox.Show("Added to content menu", "Yeah!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (regmenu != null)
+                    regmenu.Close();
+                if (regcmd != null)
+                    regcmd.Close();
+            }
+        }
+
+        public void UnRegisterContentMenu()
+        {
+            try
+            {
+                RegistryKey reg = Registry.ClassesRoot.OpenSubKey(Command);
+                if (reg != null)
+                {
+                    reg.Close();
+                    Registry.ClassesRoot.DeleteSubKey(Command);
+                }
+                reg = Registry.ClassesRoot.OpenSubKey(MenuName);
+                if (reg != null)
+                {
+                    reg.Close();
+                    Registry.ClassesRoot.DeleteSubKey(MenuName);
+                }
+                MessageBox.Show("Removed from content menu", "Yeah!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            RegisterContentMenu();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            UnRegisterContentMenu();
         }
     }
 }
