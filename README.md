@@ -34,6 +34,9 @@ If you want to help this project, please **star this repo**.
  - Make file splitter to upload files larger than 150M
  - Compress files before upload
  - Make window frame dark in darkmode
+ - Make code more readable for other people
+ - Comment code
+ - Save settings to something more than just txt file
 
 ## License
 This project is licensed under GPLv3. Please see [LICENSE file](https://github.com/SamuelTulach/VirusTotalUploader/blob/master/LICENSE).
