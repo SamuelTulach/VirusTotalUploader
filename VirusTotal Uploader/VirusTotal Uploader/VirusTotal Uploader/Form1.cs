@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -53,12 +54,59 @@ namespace VirusTotal_Uploader
         private void Form1_DragDrop(object sender, DragEventArgs e)
         {
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-            foreach (string file in files) UploadFile(file, api);
+            foreach (string file in files) CheckFile(file, api);
+        }
+
+        public async void CheckFile(string file, string apikey)
+        {
+            this.Invoke(new Action(() => label1.Text = "Checking..."));
+
+            var client = new RestClient("https://www.virustotal.com");
+            var request = new RestRequest("vtapi/v2/file/report", Method.POST);
+            request.AddParameter("apikey", apikey);
+            request.AddParameter("resource", GetMD5(file));
+
+            var asyncHandle = client.ExecuteAsync(request, response => {
+                var content = response.Content;
+                dynamic json = JsonConvert.DeserializeObject(content);
+
+                try
+                {
+                    // Shitty solution to check, but why not?
+                    // If it fails code will not continue
+                    // TODO: Actually elegant solution
+                    Console.WriteLine(json.permalink.ToString());
+
+                    DialogResult dialogResult = MessageBox.Show("This file was already scanned on " + json.scan_date + "\n\nDo you want to view results of scan or rescan file? (\"Yes\" to view, \"No\" to rescan)", "File is already in database", MessageBoxButtons.YesNo,MessageBoxIcon.Information);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        Process.Start(json.permalink.ToString());
+                        this.Invoke(new Action(() => label1.Text = "Drag file here"));
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        UploadFile(file, apikey);
+                    }
+                }
+                catch (Exception error)
+                {
+                    try
+                    {
+                        // File was probably not found in database or error so we will try to upload it
+                        UploadFile(file, apikey);
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show(err.ToString() + "\n\n" + error.ToString(), "Fatal Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.Invoke(new Action(() => label1.Text = "Drag file here"));
+                    }
+                }
+            });
         }
 
         public async void UploadFile(string file, string apikey)
         {
-            label1.Text = "Uploading...";
+            this.Invoke(new Action(() => label1.Text = "Uploading.."));
 
             var client = new RestClient("https://www.virustotal.com");
             var request = new RestRequest("vtapi/v2/file/scan", Method.POST);
@@ -112,6 +160,23 @@ namespace VirusTotal_Uploader
             string[] args = Environment.GetCommandLineArgs();
             if (args.Length > 1) {
                 UploadFile(args[1], api);
+            }
+        }
+
+        public String GetMD5(string filename)
+        {
+            using (var md5 = MD5.Create())
+            {
+                using (var stream = File.OpenRead(filename))
+                {
+                    byte[] hashBytes = md5.ComputeHash(stream);
+                    StringBuilder sb = new StringBuilder();
+                    for (int i = 0; i < hashBytes.Length; i++)
+                    {
+                        sb.Append(hashBytes[i].ToString("X2"));
+                    }
+                    return sb.ToString();
+                }
             }
         }
     }

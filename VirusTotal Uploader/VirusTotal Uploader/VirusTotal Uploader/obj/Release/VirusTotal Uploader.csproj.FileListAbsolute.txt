@@ -1,0 +1,19 @@
+C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\VirusTotal Uploader.exe.config
+C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\VirusTotal Uploader.exe
+C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\VirusTotal Uploader.pdb
+C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\Newtonsoft.Json.dll
+C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\RestSharp.dll
+C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\Newtonsoft.Json.xml
+C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal Uploader.csprojAssemblyReference.cache
+C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal_Uploader.Form1.resources
+C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal_Uploader.Properties.Resources.resources
+C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal_Uploader.Settings.resources
+C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal Uploader.csproj.GenerateResource.cache
+C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal Uploader.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal Uploader.csproj.CopyComplete
+C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal Uploader.exe
+C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal Uploader.pdb
+C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\VirusTotal Uploader.exe.manifest
+C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\VirusTotal Uploader.application
+C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal Uploader.exe.manifest
+C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal Uploader.application
