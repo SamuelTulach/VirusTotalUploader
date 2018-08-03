@@ -157,7 +157,7 @@
             // 
             this.button4.Location = new System.Drawing.Point(6, 72);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(145, 23);
+            this.button4.Size = new System.Drawing.Size(174, 23);
             this.button4.TabIndex = 8;
             this.button4.Text = "Add to content menu";
             this.button4.UseVisualStyleBackColor = true;
@@ -165,9 +165,9 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(157, 72);
+            this.button5.Location = new System.Drawing.Point(186, 72);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(145, 23);
+            this.button5.Size = new System.Drawing.Size(182, 23);
             this.button5.TabIndex = 9;
             this.button5.Text = "Remove from content menu";
             this.button5.UseVisualStyleBackColor = true;
