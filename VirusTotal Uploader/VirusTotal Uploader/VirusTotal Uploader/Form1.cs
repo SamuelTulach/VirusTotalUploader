@@ -20,6 +20,8 @@ namespace VirusTotal_Uploader
         public string api;
         public string theme;
 
+        public Languages lang;
+
         public Form1()
         {
             InitializeComponent();
@@ -59,7 +61,7 @@ namespace VirusTotal_Uploader
 
         public async void CheckFile(string file, string apikey)
         {
-            this.Invoke(new Action(() => label1.Text = "Checking..."));
+            this.Invoke(new Action(() => label1.Text = lang.GetString("Checking...")));
 
             var client = new RestClient("https://www.virustotal.com");
             var request = new RestRequest("vtapi/v2/file/report", Method.POST);
@@ -77,11 +79,11 @@ namespace VirusTotal_Uploader
                     // TODO: Actually elegant solution
                     Console.WriteLine(json.permalink.ToString());
 
-                    DialogResult dialogResult = MessageBox.Show("This file was already scanned on " + json.scan_date + "\n\nDo you want to view results of scan or rescan file? (\"Yes\" to view, \"No\" to rescan)", "File is already in database", MessageBoxButtons.YesNo,MessageBoxIcon.Information);
+                    DialogResult dialogResult = MessageBox.Show(lang.GetString("This file was already scanned on ") + json.scan_date + "\n\n" + lang.GetString("Do you want to view results of scan or rescan file? (\"Yes\" to view, \"No\" to rescan)"), lang.GetString("File is already in database"), MessageBoxButtons.YesNo,MessageBoxIcon.Information);
                     if (dialogResult == DialogResult.Yes)
                     {
                         Process.Start(json.permalink.ToString());
-                        this.Invoke(new Action(() => label1.Text = "Drag file here"));
+                        this.Invoke(new Action(() => label1.Text = lang.GetString("Drag file here")));
                     }
                     else if (dialogResult == DialogResult.No)
                     {
@@ -97,8 +99,8 @@ namespace VirusTotal_Uploader
                     }
                     catch (Exception err)
                     {
-                        MessageBox.Show(err.ToString() + "\n\n" + error.ToString(), "Fatal Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        this.Invoke(new Action(() => label1.Text = "Drag file here"));
+                        MessageBox.Show(err.ToString() + "\n\n" + error.ToString(), lang.GetString("Fatal Error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.Invoke(new Action(() => label1.Text = lang.GetString("Drag file here")));
                     }
                 }
             });
@@ -106,7 +108,7 @@ namespace VirusTotal_Uploader
 
         public async void UploadFile(string file, string apikey)
         {
-            this.Invoke(new Action(() => label1.Text = "Uploading.."));
+            this.Invoke(new Action(() => label1.Text = lang.GetString("Uploading...")));
 
             var client = new RestClient("https://www.virustotal.com");
             var request = new RestRequest("vtapi/v2/file/scan", Method.POST);
@@ -127,22 +129,28 @@ namespace VirusTotal_Uploader
                 {
                     try
                     {
-                        MessageBox.Show("VirusTotal response: " + json.verbose_msg.ToString() + "\n\n Program error: " + error.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(lang.GetString("VirusTotal response: ") + json.verbose_msg.ToString() + "\n\n" + lang.GetString("Program error: ") + error.ToString(), lang.GetString("Error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     catch (Exception err)
                     {
-                        MessageBox.Show(err.ToString(), "Fatal Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(err.ToString(), lang.GetString("Fatal Error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                this.Invoke(new Action(() => label1.Text = "Drag file here"));
+                this.Invoke(new Action(() => label1.Text = lang.GetString("Drag file here")));
             });
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            lang = new Languages();
+            lang.Init();
+
+            label1.Text = lang.GetString("Drag file here");
+            linkLabel3.Text = lang.GetString("Settings");
+
             if (!File.Exists(AppDomain.CurrentDomain.BaseDirectory + "settings.txt"))
             {
-                MessageBox.Show("No settings file found!\n\nThis is because you probably opened this app for first time. Please go to settings and add API key.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(lang.GetString("No settings file found!\n\nThis is because you probably opened this app for first time. Please go to settings and add API key."), lang.GetString("Error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             } else
             {
                 string data = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "settings.txt");

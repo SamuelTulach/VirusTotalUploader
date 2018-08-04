@@ -15,6 +15,9 @@ namespace VirusTotal_Uploader
 {
     public partial class Settings : Form
     {
+
+        public Languages lang;
+
         public Settings()
         {
             InitializeComponent();
@@ -62,8 +65,8 @@ along with this program. If not, see < https://www.gnu.org/licenses/>.","About V
             {
                 darkmode = "dark";
             }
-            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "settings.txt", textBox1.Text + ":" + darkmode);
-            MessageBox.Show("Settings saved!", "Yeah!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "settings.txt", textBox1.Text + ":" + darkmode + ":" + comboBox1.Text);
+            MessageBox.Show(lang.GetString("Settings saved!"), lang.GetString("Yeah!"), MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -73,7 +76,21 @@ along with this program. If not, see < https://www.gnu.org/licenses/>.","About V
 
         private void Settings_Load(object sender, EventArgs e)
         {
+            lang = new Languages();
+            lang.Init();
 
+            label2.Text = lang.GetString("API key");
+            label3.Text = lang.GetString("To get API key log-in on VirusTotal and under account select \"My API key\"");
+            button4.Text = lang.GetString("Add to content menu");
+            button5.Text = lang.GetString("Remove from content menu");
+            groupBox1.Text = lang.GetString("General");
+            groupBox2.Text = lang.GetString("Other");
+            button3.Text = lang.GetString("About");
+            checkBox1.Text = lang.GetString("Use dark theme");
+            label5.Text = lang.GetString("Language");
+            button1.Text = lang.GetString("Save settings");
+            button2.Text = lang.GetString("Open settings file");
+            label4.Text = lang.GetString("Restart app to apply settings");
         }
 
         private const string MenuName = "*\\shell\\UploaderMenuOption";
@@ -86,15 +103,15 @@ along with this program. If not, see < https://www.gnu.org/licenses/>.","About V
             {
                 regmenu = Registry.ClassesRoot.CreateSubKey(MenuName);
                 if (regmenu != null)
-                    regmenu.SetValue("", "Scan with VirusTotal");
+                    regmenu.SetValue("", lang.GetString("Scan with VirusTotal"));
                 regcmd = Registry.ClassesRoot.CreateSubKey(Command);
                 if (regcmd != null)
                     regcmd.SetValue("", System.Reflection.Assembly.GetEntryAssembly().Location + " %1");
-                MessageBox.Show("Added to content menu", "Yeah!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(lang.GetString("Added to content menu"), lang.GetString("Yeah!"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), lang.GetString("Error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -121,11 +138,11 @@ along with this program. If not, see < https://www.gnu.org/licenses/>.","About V
                     reg.Close();
                     Registry.ClassesRoot.DeleteSubKey(MenuName);
                 }
-                MessageBox.Show("Removed from content menu", "Yeah!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(lang.GetString("Removed from content menu"), lang.GetString("Yeah!"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), lang.GetString("Error"), MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
