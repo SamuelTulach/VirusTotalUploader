@@ -1,3 +1,4 @@
 theme: jekyll-theme-cayman
 title: "VirusTotal Uploader"
 description: "Upload files to VirusTotal quickly!"
+layout: default
