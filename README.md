@@ -1,5 +1,5 @@
 ﻿# VirusTotal Uploader
-<div style="text-align:center"><img src ="https://i.imgur.com/LYcPGdC.png" /></div>
+<p align="center"><img src ="https://i.imgur.com/LYcPGdC.png" /></p>
 
 VirusTotal Uploader is open-source application written in C# and WinForms for uploading files to VirusTotal service. It has a great and simple design with drag and drop interface. It is easy to use and you can avoid many viruses with it!
 
