@@ -11,6 +11,7 @@ namespace VirusTotal_Uploader
     {
         public Dictionary<string, string> english;
         public Dictionary<string, string> czech;
+        public Dictionary<string, string> russian;
 
         public void Init()
         {
@@ -97,6 +98,47 @@ namespace VirusTotal_Uploader
             czech.Add("Language", "Jazyk");
 
             czech.Add("Settings", "Nastavení");
+
+            /*
+              ___            _           
+             | _ \_  _ _____(_)__ _ _ _  
+             |   / || (_-<_-< / _` | ' \ 
+             |_|_\\_,_/__/__/_\__,_|_||_|
+           
+            */
+            // Google Translate is not a best metod to translate but it was easy so cmon
+            // Please some russian guy fix it
+            russian = new Dictionary<string, string>();
+
+            russian.Add("Checking...", "Проверка ...");
+            russian.Add("Uploading...", "Загрузка ...");
+            russian.Add("Drag file here", "Перетащите файл здесь");
+            russian.Add("Fatal Error", "Фатальная ошибка");
+            russian.Add("Error", "ошибка");
+            russian.Add("This file was already scanned on ", "Этот файл уже был проверен на");
+            russian.Add("Do you want to view results of scan or rescan file ? (\"Yes\" to view, \"No\" to rescan)", "Вы хотите просмотреть результаты сканирования или повторного сканирования файла");
+            russian.Add("File is already in database", "Файл уже находится в базе данных");
+            russian.Add("VirusTotal response: ", "VirusTotal response:");
+            russian.Add(" Program error: ", "  Ошибка программы:");
+            russian.Add("Settings saved!", "Настройки сохранены!");
+            russian.Add("Yeah!", "Да!");
+            russian.Add("Scan with VirusTotal", "Сканирование с помощью VirusTotal");
+            russian.Add("Added to content menu", "Добавлено в меню содержимого");
+            russian.Add("Removed from content menu", "Удалено из меню содержимого");
+            russian.Add("About", "Около");
+            russian.Add("API key", "Ключ API");
+            russian.Add("To get API key log-in on VirusTotal and under account select \"My API key\"", "Чтобы получить доступ к API-ключам в VirusTotal и под учетной записью, выберите \"My API key\"");
+            russian.Add("General", "Генеральная");
+            russian.Add("Other", "Другие");
+            russian.Add("Use dark theme", "Использовать темную тему");
+            russian.Add("Add to content menu", "Добавить в контекстное меню");
+            russian.Add("Remove from content menu", "Удалить из меню содержимого");
+            russian.Add("Save settings", "Сохранить настройки");
+            russian.Add("Open settings file", "Открыть файл настроек");
+            russian.Add("Restart app to apply settings", "Перезапустить приложение для применения настроек");
+            russian.Add("Language", "язык");
+            russian.Add("Settings", "настройки");
+
         }
 
         public string GetString(string text)
@@ -121,10 +163,16 @@ namespace VirusTotal_Uploader
             }
             if (language == "Czech")
             {
+                if (!czech.ContainsKey(text)) return english[text];
                 return czech[text];
             }
+            if (language == "Russian")
+            {
+                if (!russian.ContainsKey(text)) return english[text];
+                return russian[text];
+            }
 
-            return "String not found!";
+            return "No language set!";
         }
     }
 }

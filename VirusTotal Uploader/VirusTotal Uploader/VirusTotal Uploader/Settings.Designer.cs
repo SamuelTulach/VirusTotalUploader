@@ -116,11 +116,11 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 26);
             this.label1.TabIndex = 1;
-            this.label1.Text = "VirusTotal Uploader\r\n0.0.2";
+            this.label1.Text = "VirusTotal Uploader\r\n0.0.3";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(10, 197);
+            this.button1.Location = new System.Drawing.Point(10, 198);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(114, 23);
             this.button1.TabIndex = 3;
@@ -150,7 +150,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(130, 197);
+            this.button2.Location = new System.Drawing.Point(130, 198);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(114, 23);
             this.button2.TabIndex = 5;
@@ -161,7 +161,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(250, 202);
+            this.label4.Location = new System.Drawing.Point(250, 203);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(141, 13);
             this.label4.TabIndex = 6;
@@ -191,7 +191,8 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "English",
-            "Czech"});
+            "Czech",
+            "Russian"});
             this.comboBox1.Location = new System.Drawing.Point(75, 119);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(293, 21);
@@ -202,7 +203,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 224);
+            this.ClientSize = new System.Drawing.Size(534, 229);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button2);
