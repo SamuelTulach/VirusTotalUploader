@@ -28,6 +28,7 @@ If you have any idea how to make this app better, please create pull request. If
 
 ## Help
 If you want to help this project, please **star this repo**.
+If you want to support me, [you can use my PayPal](https://www.paypal.me/SamuelTulach).
 
 ## TODO
 
