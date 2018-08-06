@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Google.Api.Gax.Rest</name>
+    </assembly>
+    <members>
+        <member name="T:Google.Api.Gax.Rest.PageManagerExtensions">
+            <summary>
+            Extension methods on IPageManager, just to avoid repetitive code.
+            </summary>
+        </member>
+        <member name="T:Google.Api.Gax.Rest.IPageManager`3">
+            <summary>
+            Interface describing the relationship between requests, responses and resources for
+            page streaming.
+            </summary>
+            <typeparam name="TRequest">The request type.</typeparam>
+            <typeparam name="TResponse">The response type.</typeparam>
+            <typeparam name="TResource">The resource type.</typeparam>
+        </member>
+        <member name="M:Google.Api.Gax.Rest.IPageManager`3.SetPageSize(`0,System.Int32)">
+            <summary>
+            Applies the given page size to the given request.
+            </summary>
+            <param name="request">The request to modify.</param>
+            <param name="pageSize">The page size for the next remote call.</param>
+        </member>
+        <member name="M:Google.Api.Gax.Rest.IPageManager`3.SetPageToken(`0,System.String)">
+            <summary>
+            Applies the given page token to the given request.
+            </summary>
+            <param name="request">The request to modify.</param>
+            <param name="pageToken">The page token for the next remote call.</param>
+        </member>
+        <member name="M:Google.Api.Gax.Rest.IPageManager`3.GetResources(`1)">
+            <summary>
+            Extracts resources from a response.
+            </summary>
+            <param name="response">The response containing the resources.</param>
+            <returns>The resources in the response, or <c>null</c> if it contains no resources.</returns>
+        </member>
+        <member name="M:Google.Api.Gax.Rest.IPageManager`3.GetNextPageToken(`1)">
+            <summary>
+            Extracts the next page token from a response.
+            </summary>
+            <param name="response">The response to extract the next page token from.</param>
+            <returns>The next page token, or <c>null</c> if this is the final page of results.</returns>
+        </member>
+        <member name="T:Google.Api.Gax.Rest.RestPagedAsyncEnumerable`3">
+            <summary>
+            An asynchronous sequence of resources, obtained lazily via API operations which retrieve a page at a time.
+            </summary>
+            <typeparam name="TRequest">The API request type.</typeparam>
+            <typeparam name="TResponse">The API response type. Each response contains a page of resources.</typeparam>
+            <typeparam name="TResource">The resource type contained within the response.</typeparam>
+        </member>
+        <member name="M:Google.Api.Gax.Rest.RestPagedAsyncEnumerable`3.#ctor(System.Func{`0},Google.Api.Gax.Rest.IPageManager{`0,`1,`2})">
+            <summary>
+            Creates a new lazily-evaluated sequence from the given API call, initial request, and call settings.
+            </summary>
+            <param name="requestProvider">A factory used to create an initial request each time the sequence is iterated over.</param>
+            <param name="pageManager">A manager to work with the requests and responses.</param>
+        </member>
+        <member name="M:Google.Api.Gax.Rest.RestPagedAsyncEnumerable`3.AsRawResponses">
+            <inheritdoc/>
+        </member>
+        <member name="M:Google.Api.Gax.Rest.RestPagedAsyncEnumerable`3.ReadPageAsync(System.Int32,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Google.Api.Gax.Rest.RestPagedAsyncEnumerable`3.GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="T:Google.Api.Gax.Rest.ResponseAsyncEnumerable`3">
+            <summary>
+            An asynchronous sequence of API responses, each containing a page of resources.
+            </summary>
+            <typeparam name="TRequest">The API request type.</typeparam>
+            <typeparam name="TResponse">The API response type.</typeparam>
+            <typeparam name="TResource">The resource type contained within the response.</typeparam>
+        </member>
+        <member name="M:Google.Api.Gax.Rest.ResponseAsyncEnumerable`3.GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="M:Google.Api.Gax.Rest.ResponseAsyncEnumerable`3.System#Collections#Generic#IAsyncEnumerable{TResponse}#GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="T:Google.Api.Gax.Rest.RestPagedEnumerable`3">
+            <summary>
+            A sequence of resources, obtained lazily via API operations which retrieve a page at a time.
+            </summary>
+            <typeparam name="TRequest">The API request type.</typeparam>
+            <typeparam name="TResponse">The API response type. Each response contains a page of resources.</typeparam>
+            <typeparam name="TResource">The resource type contained within the response.</typeparam>
+        </member>
+        <member name="M:Google.Api.Gax.Rest.RestPagedEnumerable`3.#ctor(System.Func{`0},Google.Api.Gax.Rest.IPageManager{`0,`1,`2})">
+            <summary>
+            Creates a new lazily-evaluated sequence from the given API call, initial request, and call settings.
+            </summary>
+            <param name="requestProvider">A factory used to create an initial request each time the sequence is iterated over.</param>
+            <param name="pageManager">A manager to work with the requests and responses.</param>
+        </member>
+        <member name="M:Google.Api.Gax.Rest.RestPagedEnumerable`3.AsRawResponses">
+            <inheritdoc/>
+        </member>
+        <member name="M:Google.Api.Gax.Rest.RestPagedEnumerable`3.GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="M:Google.Api.Gax.Rest.RestPagedEnumerable`3.ReadPage(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Google.Api.Gax.Rest.ScopedCredentialProvider">
+            <summary>
+            Simple factory of scoped credentials, which caches a scoped version of the
+            default application credentials to avoid repeated authentication.
+            </summary>
+        </member>
+        <member name="F:Google.Api.Gax.Rest.ScopedCredentialProvider._lazyScopedDefaultCredentials">
+            <summary>
+            Lazily-created task to retrieve the default application channel credentials. Once completed, this
+            task can be used whenever channel credentials are required. The returned task always runs in the
+            thread pool, so its result can be used synchronously from synchronous methods without risk of deadlock.
+            The same channel credentials are used by all pools. The field is initialized in the constructor, as it uses
+            _scopes, and you can't refer to an instance field within an instance field initializer.
+            </summary>
+        </member>
+        <member name="M:Google.Api.Gax.Rest.ScopedCredentialProvider.#ctor(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a channel pool which will apply the specified scopes to the credentials if they require any.
+            </summary>
+            <param name="scopes">The scopes to apply. Must not be null, and must not contain null references. May be empty.</param>
+        </member>
+        <member name="M:Google.Api.Gax.Rest.ScopedCredentialProvider.GetCredentials(Google.Apis.Auth.OAuth2.GoogleCredential)">
+            <summary>
+            Returns credentials with the scopes applied if required.
+            </summary>
+            <param name="credentials">Existing credentials, if any. This may be null,
+            in which case the default application credentials will be used.</param>
+            <returns>A task representing the asynchronous operation. The result of the task
+            is the scoped credentials.</returns>
+        </member>
+        <member name="M:Google.Api.Gax.Rest.ScopedCredentialProvider.GetCredentialsAsync(Google.Apis.Auth.OAuth2.GoogleCredential)">
+            <summary>
+            Asynchronously returns credentials with the scopes applied if required.
+            </summary>
+            <param name="credentials">Existing credentials, if any. This may be null,
+            in which case the default application credentials will be used.</param>
+            <returns>A task representing the asynchronous operation. The result of the task
+            is the scoped credentials.</returns>
+        </member>
+        <member name="T:Google.Api.Gax.Rest.UserAgentHelper">
+            <summary>
+            Common code used for building user agents and related headers in REST libraries.
+            </summary>
+        </member>
+        <member name="M:Google.Api.Gax.Rest.UserAgentHelper.GetDefaultUserAgent(System.Type)">
+            <summary>
+            Formats a user agent suitable for REST client libraries.
+            </summary>
+            <param name="type">The type to extract the version number from.</param>
+            <returns>A user agent value.</returns>
+        </member>
+        <member name="M:Google.Api.Gax.Rest.UserAgentHelper.CreateRequestModifier(System.Type)">
+            <summary>
+            Creates a request modifier which sets the Google-specific version header in HTTP requests.
+            </summary>
+            <param name="type">The type to extract the version number from.</param>
+            <returns>A request modifier.</returns>
+        </member>
+    </members>
+</doc>

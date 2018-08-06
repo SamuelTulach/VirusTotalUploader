@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using Google.Cloud.Translation.V2;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -78,6 +79,26 @@ along with this program. If not, see < https://www.gnu.org/licenses/>.","About V
         {
             lang = new Languages();
             lang.Init();
+
+            try
+            {
+                TranslationClient client = TranslationClient.Create();
+                var languages = client.ListLanguages(null, TranslationModel.Base);
+                foreach (Language language in client.ListLanguages())
+                {
+                    try
+                    {
+                        comboBox1.Items.Add(language.Code);
+                    } catch (Exception error)
+                    {
+                        // Variable cannot be null
+                        MessageBox.Show(error.ToString());
+                    }
+                }
+            } catch (Exception error)
+            {
+                // Probably no credentails
+            }
 
             label2.Text = lang.GetString("API key");
             label3.Text = lang.GetString("To get API key log-in on VirusTotal and under account select \"My API key\"");
