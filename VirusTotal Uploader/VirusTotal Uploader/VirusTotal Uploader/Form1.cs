@@ -12,6 +12,9 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IniParser;
+using IniParser.Model;
+using System.Runtime.InteropServices;
 
 namespace VirusTotal_Uploader
 {
@@ -148,21 +151,25 @@ namespace VirusTotal_Uploader
             label1.Text = lang.GetString("Drag file here");
             linkLabel3.Text = lang.GetString("Settings");
 
-            if (!File.Exists(AppDomain.CurrentDomain.BaseDirectory + "settings.txt"))
+            if (!File.Exists(AppDomain.CurrentDomain.BaseDirectory + "Settings.ini"))
             {
                 MessageBox.Show(lang.GetString("No settings file found!\n\nThis is because you probably opened this app for first time. Please go to settings and add API key."), lang.GetString("Error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             } else
             {
-                string data = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "settings.txt");
-                string[] arrayd = data.Split(':');
-                api = arrayd[0];
-                theme = arrayd[1];
+                var parser = new FileIniDataParser();
+                IniData data = parser.ReadFile("Settings.ini");
+                api = data["General"]["ApiKey"];
+                theme = data["General"]["Theme"];
             }
 
             if (theme == "dark")
             {
                 this.BackColor = ColorTranslator.FromHtml("#0a0a0a");
                 this.ForeColor = Color.WhiteSmoke;
+                panel2.BackColor = ColorTranslator.FromHtml("#383838");
+                linkLabel1.LinkColor = ColorTranslator.FromHtml("#b2b2b2");
+                linkLabel2.LinkColor = ColorTranslator.FromHtml("#b2b2b2");
+                linkLabel3.LinkColor = ColorTranslator.FromHtml("#b2b2b2");
             }
 
             string[] args = Environment.GetCommandLineArgs();
@@ -186,6 +193,32 @@ namespace VirusTotal_Uploader
                     return sb.ToString();
                 }
             }
+        }
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+        private void panel2_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using Google.Cloud.Translation.V2;
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IniParser;
+using IniParser.Model;
 
 namespace VirusTotal_Uploader
 {
@@ -27,13 +28,13 @@ namespace VirusTotal_Uploader
         private string GetMD5()
         {
             System.Security.Cryptography.MD5CryptoServiceProvider md5 = new System.Security.Cryptography.MD5CryptoServiceProvider();
-            System.IO.FileStream stream = new System.IO.FileStream(System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName, System.IO.FileMode.Open, System.IO.FileAccess.Read);
+            FileStream stream = new FileStream(Process.GetCurrentProcess().MainModule.FileName, FileMode.Open, FileAccess.Read);
 
             md5.ComputeHash(stream);
 
             stream.Close();
 
-            System.Text.StringBuilder sb = new System.Text.StringBuilder();
+            StringBuilder sb = new StringBuilder();
             for (int i = 0; i < md5.Hash.Length; i++)
                 sb.Append(md5.Hash[i].ToString("x2"));
 
@@ -61,44 +62,26 @@ along with this program. If not, see < https://www.gnu.org/licenses/>.","About V
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string darkmode = "light";
+            /*string darkmode = "light";
             if (checkBox1.Checked)
             {
                 darkmode = "dark";
             }
             File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "settings.txt", textBox1.Text + ":" + darkmode + ":" + comboBox1.Text);
+            MessageBox.Show(lang.GetString("Settings saved!"), lang.GetString("Yeah!"), MessageBoxButtons.OK, MessageBoxIcon.Information);*/
+            SaveSettings();
             MessageBox.Show(lang.GetString("Settings saved!"), lang.GetString("Yeah!"), MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Process.Start(AppDomain.CurrentDomain.BaseDirectory + "settings.txt");
+            Process.Start(AppDomain.CurrentDomain.BaseDirectory + "Settings.ini");
         }
 
         private void Settings_Load(object sender, EventArgs e)
         {
             lang = new Languages();
             lang.Init();
-
-            try
-            {
-                TranslationClient client = TranslationClient.Create();
-                var languages = client.ListLanguages(null, TranslationModel.Base);
-                foreach (Language language in client.ListLanguages())
-                {
-                    try
-                    {
-                        comboBox1.Items.Add(language.Code);
-                    } catch (Exception error)
-                    {
-                        // Variable cannot be null
-                        MessageBox.Show(error.ToString());
-                    }
-                }
-            } catch (Exception error)
-            {
-                // Probably no credentails
-            }
 
             label2.Text = lang.GetString("API key");
             label3.Text = lang.GetString("To get API key log-in on VirusTotal and under account select \"My API key\"");
@@ -112,6 +95,18 @@ along with this program. If not, see < https://www.gnu.org/licenses/>.","About V
             button1.Text = lang.GetString("Save settings");
             button2.Text = lang.GetString("Open settings file");
             label4.Text = lang.GetString("Restart app to apply settings");
+
+            if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "Settings.ini"))
+            {
+                var parser = new FileIniDataParser();
+                IniData data = parser.ReadFile("Settings.ini");
+                textBox1.Text = data["General"]["ApiKey"];
+                string theme = data["General"]["Theme"];
+                if (theme == "dark")
+                {
+                    checkBox1.Checked = true;
+                }
+            }
         }
 
         private const string MenuName = "*\\shell\\UploaderMenuOption";
@@ -175,6 +170,22 @@ along with this program. If not, see < https://www.gnu.org/licenses/>.","About V
         private void button5_Click(object sender, EventArgs e)
         {
             UnRegisterContentMenu();
+        }
+
+        public void SaveSettings()
+        {
+            string darkmode = "light";
+            if (checkBox1.Checked)
+            {
+                darkmode = "dark";
+            }
+
+            var parser = new FileIniDataParser();
+            IniData data = new IniData();
+            data["General"]["ApiKey"] = textBox1.Text;
+            data["General"]["Theme"] = darkmode;
+            data["General"]["Language"] = comboBox1.Text;
+            parser.WriteFile("Settings.ini", data);
         }
     }
 }

@@ -47,3 +47,52 @@ C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\Virus
 C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\Google.Cloud.Translation.V2.xml
 C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\System.Diagnostics.DiagnosticSource.xml
 C:\Users\Administrator\Source\Repos\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\System.Interactive.Async.xml
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\VirusTotal Uploader.exe.config
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\VirusTotal Uploader.exe.manifest
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\VirusTotal Uploader.application
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\VirusTotal Uploader.exe
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\VirusTotal Uploader.pdb
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\Google.Api.Gax.dll
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\Google.Api.Gax.Rest.dll
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\Google.Apis.Auth.dll
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\Google.Apis.Auth.PlatformServices.dll
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\Google.Apis.Core.dll
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\Google.Apis.dll
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\Google.Apis.PlatformServices.dll
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\Google.Apis.Translate.v2.dll
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\Google.Cloud.Translation.V2.dll
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\Microsoft.Win32.Primitives.dll
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\Newtonsoft.Json.dll
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\RestSharp.dll
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\System.Interactive.Async.dll
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\System.Net.Http.dll
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\System.Security.Cryptography.Algorithms.dll
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\System.Security.Cryptography.Encoding.dll
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\System.Security.Cryptography.Primitives.dll
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\Google.Api.Gax.xml
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\Google.Api.Gax.Rest.xml
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\Google.Apis.pdb
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\Google.Apis.xml
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\Google.Apis.Auth.pdb
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\Google.Apis.Auth.xml
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\Google.Apis.Core.pdb
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\Google.Apis.Core.xml
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\Google.Apis.Translate.v2.pdb
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\Google.Apis.Translate.v2.xml
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\Google.Cloud.Translation.V2.xml
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\Newtonsoft.Json.xml
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\System.Interactive.Async.xml
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal Uploader.csprojAssemblyReference.cache
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal_Uploader.Form1.resources
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal_Uploader.Properties.Resources.resources
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal_Uploader.Settings.resources
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal Uploader.csproj.GenerateResource.cache
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal Uploader.csproj.CoreCompileInputs.cache
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal Uploader.exe.manifest
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal Uploader.application
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal Uploader.csproj.CopyComplete
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal Uploader.exe
+C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal Uploader.pdb

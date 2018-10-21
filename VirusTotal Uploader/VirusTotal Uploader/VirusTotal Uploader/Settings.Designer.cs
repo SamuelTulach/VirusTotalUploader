@@ -68,12 +68,12 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Original"});
+            "English"});
             this.comboBox1.Location = new System.Drawing.Point(253, 65);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(201, 21);
             this.comboBox1.TabIndex = 11;
-            this.comboBox1.Text = "Original";
+            this.comboBox1.Text = "English";
             // 
             // label5
             // 
