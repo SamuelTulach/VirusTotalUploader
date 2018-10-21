@@ -1,5 +1,5 @@
 ﻿# VirusTotal Uploader
-<p align="center"><img src ="https://i.imgur.com/LYcPGdC.png" /></p>
+![screenshot](https://i.imgur.com/AoYrHye.png)
 
 VirusTotal Uploader is open-source application written in C# and WinForms for uploading files to VirusTotal service. It has a great and simple design with drag and drop interface. It is easy to use and you can avoid many viruses with it!
 
@@ -38,10 +38,10 @@ If you want to support me, [you can use my PayPal](https://www.paypal.me/SamuelT
 
  - Make file splitter to upload files larger than 150M
  - Compress files before upload
- - Make window frame dark in darkmode
+ - ~~Make window frame dark in darkmode~~ ✓
  - Make code more readable for other people
  - Comment code
- - Save settings to something more than just txt file
+ - ~~Save settings to something more than just txt file~~ ✓
 
 ## License
 This project is licensed under GPLv3. Please see [LICENSE file](https://github.com/SamuelTulach/VirusTotalUploader/blob/master/LICENSE).
