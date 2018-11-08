@@ -157,7 +157,7 @@ namespace VirusTotal_Uploader
             } else
             {
                 var parser = new FileIniDataParser();
-                IniData data = parser.ReadFile("Settings.ini");
+                IniData data = parser.ReadFile(AppDomain.CurrentDomain.BaseDirectory + "Settings.ini");
                 api = data["General"]["ApiKey"];
                 theme = data["General"]["Theme"];
             }
