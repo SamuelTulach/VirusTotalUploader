@@ -7,14 +7,14 @@
     <framework targetVersion="4.6.1" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="VirusTotal Uploader.exe.manifest" size="17415">
+    <dependentAssembly dependencyType="install" codebase="VirusTotal Uploader.exe.manifest" size="11842">
       <assemblyIdentity name="VirusTotal Uploader.exe" version="1.0.0.5" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>h00MQb9zLOzz5h/rUoQXQzjO6OhQwi53ob72kQqf7xg=</dsig:DigestValue>
+        <dsig:DigestValue>woYgpPKENnR1369KdSYrIzwVl/BWsZkyuhIiBvhvjhk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
