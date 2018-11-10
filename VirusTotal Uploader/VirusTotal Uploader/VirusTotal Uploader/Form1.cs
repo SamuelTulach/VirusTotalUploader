@@ -108,7 +108,7 @@ namespace VirusTotal_Uploader
                     if (dialogResult == DialogResult.Yes) // Check dialog result
                     {
                         Process.Start(json.permalink.ToString()); // Open browser with file link
-                        this.Invoke(new Action(() => label1.Text = lang.GetString("Drag file here"))); // Set label text back
+                        ResetLabel(); // Set label text back
                     }
                     else if (dialogResult == DialogResult.No)
                     {
@@ -125,7 +125,7 @@ namespace VirusTotal_Uploader
                     catch (Exception err)
                     {
                         MessageBox.Show(err.ToString() + "\n\n" + error.ToString(), lang.GetString("Fatal Error"), MessageBoxButtons.OK, MessageBoxIcon.Error); // Show error messagebox
-                        this.Invoke(new Action(() => label1.Text = lang.GetString("Drag file here"))); // Set label text back
+                        ResetLabel(); // Set label text back
                     }
                 }
             });
@@ -140,11 +140,28 @@ namespace VirusTotal_Uploader
             request.AddParameter("apikey", apikey); // Add apikey parameter with API key
             request.AddFile("file", file); // Add file in file parameter
 
+            if (new FileInfo(file).Length > 32000000)
+            {
+                DialogResult dialogResult = MessageBox.Show("Your file has more than 32MB. Public VirusTotal API does not support file larger than 32MB. Do you want to continue? (Click ok to continue, cancel to stop upload)", "File is too large", MessageBoxButtons.OKCancel, MessageBoxIcon.Information); // Show information dialog
+                if (dialogResult == DialogResult.Cancel) // Check dialog result
+                {
+                    ResetLabel();
+                    return;
+                }
+            }
+
             //IRestResponse response = client.Execute(request);
 
             // Execute request
+            // Execute request
             var asyncHandle = client.ExecuteAsync(request, response => {
                 var content = response.Content; // Get content from response
+                if (content.Contains("<html>")) // Check if response is in HTML (there was some issues with large files)
+                {
+                    MessageBox.Show("Response from VirusTotal is in HTML. This is probably because your file is too large.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); // Display error dialog
+                    ResetLabel();
+                    return;
+                }
                 dynamic json = JsonConvert.DeserializeObject(content); // Deserialize JSON
 
                 try
@@ -162,7 +179,7 @@ namespace VirusTotal_Uploader
                         MessageBox.Show(err.ToString(), lang.GetString("Fatal Error"), MessageBoxButtons.OK, MessageBoxIcon.Error); // Show error dialog of showing error dialog
                     }
                 }
-                this.Invoke(new Action(() => label1.Text = lang.GetString("Drag file here"))); // Reset label text
+                ResetLabel(); // Reset label text
             });
         }
 
@@ -249,6 +266,14 @@ namespace VirusTotal_Uploader
         private void label3_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized; // Minimize window
+        }
+
+        /// <summary>
+        /// Resets text if information label
+        /// </summary>
+        public void ResetLabel()
+        {
+            this.Invoke(new Action(() => label1.Text = lang.GetString("Drag file here"))); // Reset label text
         }
     }
 }

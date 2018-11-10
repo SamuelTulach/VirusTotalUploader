@@ -115,7 +115,7 @@ along with this program. If not, see < https://www.gnu.org/licenses/>.","About V
             if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "Settings.ini"))
             {
                 var parser = new FileIniDataParser();
-                IniData data = parser.ReadFile("Settings.ini");
+                IniData data = parser.ReadFile(AppDomain.CurrentDomain.BaseDirectory + "Settings.ini");
                 textBox1.Text = data["General"]["ApiKey"];
                 string theme = data["General"]["Theme"];
                 if (theme == "dark")
@@ -201,7 +201,7 @@ along with this program. If not, see < https://www.gnu.org/licenses/>.","About V
             data["General"]["ApiKey"] = textBox1.Text;
             data["General"]["Theme"] = darkmode;
             data["General"]["Language"] = comboBox1.Text;
-            parser.WriteFile("Settings.ini", data);
+            parser.WriteFile(AppDomain.CurrentDomain.BaseDirectory + "Settings.ini", data);
         }
     }
 }
