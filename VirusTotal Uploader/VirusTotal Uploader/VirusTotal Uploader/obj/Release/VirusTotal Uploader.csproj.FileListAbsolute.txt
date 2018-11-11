@@ -96,34 +96,3 @@ C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal U
 C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal Uploader.csproj.CopyComplete
 C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal Uploader.exe
 C:\Users\Samuel Tulach\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal Uploader.pdb
-C:\Users\samtu\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\VirusTotal Uploader.exe.config
-C:\Users\samtu\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\VirusTotal Uploader.exe.manifest
-C:\Users\samtu\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\VirusTotal Uploader.application
-C:\Users\samtu\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\VirusTotal Uploader.exe
-C:\Users\samtu\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\VirusTotal Uploader.pdb
-C:\Users\samtu\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\INIFileParser.dll
-C:\Users\samtu\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\Microsoft.Win32.Primitives.dll
-C:\Users\samtu\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\Newtonsoft.Json.dll
-C:\Users\samtu\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\RestSharp.dll
-C:\Users\samtu\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\System.Diagnostics.DiagnosticSource.dll
-C:\Users\samtu\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\System.Interactive.Async.dll
-C:\Users\samtu\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\System.Net.Http.dll
-C:\Users\samtu\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\System.Security.Cryptography.Algorithms.dll
-C:\Users\samtu\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\System.Security.Cryptography.Encoding.dll
-C:\Users\samtu\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\System.Security.Cryptography.Primitives.dll
-C:\Users\samtu\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\System.Security.Cryptography.X509Certificates.dll
-C:\Users\samtu\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\INIFileParser.xml
-C:\Users\samtu\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\Newtonsoft.Json.xml
-C:\Users\samtu\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\System.Diagnostics.DiagnosticSource.xml
-C:\Users\samtu\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\bin\Release\System.Interactive.Async.xml
-C:\Users\samtu\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal Uploader.csprojAssemblyReference.cache
-C:\Users\samtu\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal_Uploader.Form1.resources
-C:\Users\samtu\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal_Uploader.Properties.Resources.resources
-C:\Users\samtu\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal_Uploader.Settings.resources
-C:\Users\samtu\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal Uploader.csproj.GenerateResource.cache
-C:\Users\samtu\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal Uploader.csproj.CoreCompileInputs.cache
-C:\Users\samtu\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal Uploader.exe.manifest
-C:\Users\samtu\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal Uploader.application
-C:\Users\samtu\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal Uploader.csproj.CopyComplete
-C:\Users\samtu\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal Uploader.exe
-C:\Users\samtu\Source\Repos\SamuelTulach\VirusTotalUploader\VirusTotal Uploader\VirusTotal Uploader\VirusTotal Uploader\obj\Release\VirusTotal Uploader.pdb

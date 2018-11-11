@@ -21,11 +21,11 @@ It is really simple! All you need to do is to go to [VirusTotal official page](h
 ## How to use
 It is really easy! Just drag and drop file into the app and voila!
 
-![usage](https://i.imgur.com/iEpbruh.gif)
+![usage](https://i.imgur.com/blyQ1jK.gif)
 
 Alternatively you can add VirusTotal Uploader to file content menu and click on file and select "Scan with VirusTotal".
 
-![usage](https://i.imgur.com/1IZu0Gs.gif)
+![usage](https://i.imgur.com/2iGyilJ.gif)
 
 ## Contributing
 If you have any idea how to make this app better, please create pull request. If you find any bug, please create issue.

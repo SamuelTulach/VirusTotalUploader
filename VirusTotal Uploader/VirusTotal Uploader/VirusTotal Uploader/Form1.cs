@@ -153,7 +153,6 @@ namespace VirusTotal_Uploader
             //IRestResponse response = client.Execute(request);
 
             // Execute request
-            // Execute request
             var asyncHandle = client.ExecuteAsync(request, response => {
                 var content = response.Content; // Get content from response
                 if (content.Contains("<html>")) // Check if response is in HTML (there was some issues with large files)
@@ -215,7 +214,7 @@ namespace VirusTotal_Uploader
 
             string[] args = Environment.GetCommandLineArgs(); // Get program arguments
             if (args.Length > 1) {
-                UploadFile(args[1], api); // Upload file
+                CheckFile(args[1], api); // Upload file
             }
         }
 
