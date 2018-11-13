@@ -13,6 +13,11 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+ 
+ /*
+  * This code is so great, that I can work in Google!
+  *                                 - sarcastic me
+  */
 
 using Newtonsoft.Json;
 using RestSharp;
@@ -31,6 +36,7 @@ using System.Windows.Forms;
 using IniParser;
 using IniParser.Model;
 using System.Runtime.InteropServices;
+using System.Security.Permissions;
 
 namespace VirusTotal_Uploader
 {
@@ -40,6 +46,7 @@ namespace VirusTotal_Uploader
         public string theme; // Application theme
 
         public Languages lang; // Language class
+        public ErrorWindow errw; // Error window used for reporting errors
 
         public Form1()
         {
@@ -124,7 +131,9 @@ namespace VirusTotal_Uploader
                     }
                     catch (Exception err)
                     {
-                        MessageBox.Show(err.ToString() + "\n\n" + error.ToString(), lang.GetString("Fatal Error"), MessageBoxButtons.OK, MessageBoxIcon.Error); // Show error messagebox
+                        //MessageBox.Show("Error sending request!\nOE: " + err.ToString() + "\n\n" + error.ToString(), lang.GetString("Fatal Error"), MessageBoxButtons.OK, MessageBoxIcon.Error); // Show error messagebox
+                        errw.Error = "Error sending request!\n\nOE: " + err.ToString();
+                        this.Invoke(new Action(() => errw.Show()));
                         ResetLabel(); // Set label text back
                     }
                 }
@@ -148,6 +157,17 @@ namespace VirusTotal_Uploader
                     ResetLabel();
                     return;
                 }
+            }
+            try
+            {
+                FileStream fs = File.Open(file, FileMode.Open);
+            } catch (Exception err)
+            {
+                errw.FormTitle = "Could not read the file";
+                errw.Error = "Can´t read from file! Please check if it is not open by another process or check if you have permissions to read it.\n\nOE: " + err.ToString(); // Create error window
+                this.Invoke(new Action(() => errw.Show())); // Open error window
+                ResetLabel();
+                return;
             }
 
             //IRestResponse response = client.Execute(request);
@@ -175,7 +195,13 @@ namespace VirusTotal_Uploader
                     }
                     catch (Exception err)
                     {
-                        MessageBox.Show(err.ToString(), lang.GetString("Fatal Error"), MessageBoxButtons.OK, MessageBoxIcon.Error); // Show error dialog of showing error dialog
+                        //MessageBox.Show("Fatal error happened! Please check if your internet connection, API key and firewall. " + err.ToString(), lang.GetString("Fatal Error"), MessageBoxButtons.OK, MessageBoxIcon.Error); // Show error dialog of showing error dialog
+                        if (content == null)
+                        {
+                            content = "null";
+                        }
+                        errw.Error = "There is no valid response from VirusTotal. Please check if your internet connection, API key and firewall.\n\nResponse error message: " + response.ErrorMessage + "\nResponse exception: " + response.ErrorException + "\nResponse: " + content + "\n\nOE: " + err.ToString(); // Create error window
+                        this.Invoke(new Action(() => errw.Show())); // Open error window
                     }
                 }
                 ResetLabel(); // Reset label text
@@ -186,6 +212,8 @@ namespace VirusTotal_Uploader
         {
             lang = new Languages(); // Initialize language class
             lang.Init(); // Run init function
+
+            errw = new ErrorWindow(); // Initialize ErrorWindow
 
             label1.Text = lang.GetString("Drag file here"); // Set label text
             linkLabel3.Text = lang.GetString("Settings"); // Set settings link text
@@ -283,7 +311,7 @@ namespace VirusTotal_Uploader
             int nBottomRect,
             int nWidthEllipse,
             int nHeightEllipse
-            );
+        );
 
         public struct MARGINS
         {
