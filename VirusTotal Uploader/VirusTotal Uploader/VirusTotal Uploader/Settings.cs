@@ -60,7 +60,7 @@ namespace VirusTotal_Uploader
         private void button3_Click(object sender, EventArgs e)
         {
             MessageBox.Show("VirusTotal Uploader\n\n" + GetMD5() + "\n\n" + @"
-Copyright (c) 2018 Samuel Tulach
+Copyright (c) 2019 Samuel Tulach
     
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
