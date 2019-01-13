@@ -76,7 +76,7 @@ You should have received a copy of the GNU General Public License
 along with this program. If not, see < https://www.gnu.org/licenses/>.","About VirusTotal Uploader", MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+       private void button1_Click(object sender, EventArgs e)
         {
             /*string darkmode = "light";
             if (checkBox1.Checked)
@@ -86,9 +86,31 @@ along with this program. If not, see < https://www.gnu.org/licenses/>.","About V
             File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "settings.txt", textBox1.Text + ":" + darkmode + ":" + comboBox1.Text);
             MessageBox.Show(lang.GetString("Settings saved!"), lang.GetString("Yeah!"), MessageBoxButtons.OK, MessageBoxIcon.Information);*/
             SaveSettings();
+
+
+            // Initializes the variables to pass to the MessageBox.Show method.
+
+            string message = "Do you want to restart the application?";
+            string caption = "VirusTotal Uploader - Restart?";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+            // Displays the MessageBox.
+
+            result = MessageBox.Show(this, message, caption, buttons, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+
+                // Restart the app.
+
+                Application.Restart();
+
+            }
+
+
             MessageBox.Show(lang.GetString("Settings saved!"), lang.GetString("Yeah!"), MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             Process.Start(AppDomain.CurrentDomain.BaseDirectory + "Settings.ini");
