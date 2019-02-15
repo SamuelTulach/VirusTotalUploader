@@ -136,7 +136,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 26);
             this.label1.TabIndex = 1;
-            this.label1.Text = "VirusTotal Uploader\r\n0.0.4";
+            this.label1.Text = "VirusTotal Uploader\r\n0.0.7";
             // 
             // button1
             // 
