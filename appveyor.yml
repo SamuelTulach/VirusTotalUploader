@@ -1,0 +1,8 @@
+version: 1.0.{build}
+before_build:
+- cmd: >-
+    cd VirusTotal Uploader/VirusTotal Uploader
+
+    nuget restore
+build:
+  verbosity: minimal
