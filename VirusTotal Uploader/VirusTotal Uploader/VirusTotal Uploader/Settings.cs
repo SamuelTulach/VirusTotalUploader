@@ -1,5 +1,5 @@
 ﻿/*  Copyright (c) 2018 Samuel Tulach
- *  
+ *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
@@ -61,7 +61,7 @@ namespace VirusTotal_Uploader
         {
             MessageBox.Show("VirusTotal Uploader\n\n" + GetMD5() + "\n\n" + @"
 Copyright (c) 2018 Samuel Tulach
-    
+
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
@@ -160,7 +160,7 @@ along with this program. If not, see < https://www.gnu.org/licenses/>.","About V
                     regmenu.SetValue("", lang.GetString("Scan with VirusTotal"));
                 regcmd = Registry.ClassesRoot.CreateSubKey(Command);
                 if (regcmd != null)
-                    regcmd.SetValue("", System.Reflection.Assembly.GetEntryAssembly().Location + " \"%1\"");
+                    regcmd.SetValue("", "\"" + System.Reflection.Assembly.GetEntryAssembly().Location + "\" \"%1\"");
                 MessageBox.Show(lang.GetString("Added to content menu"), lang.GetString("Yeah!"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
