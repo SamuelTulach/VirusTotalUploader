@@ -44,7 +44,7 @@ To build this project without installing Visual Studio, follow these steps:
 2. Run `nuget restore` to gather the required dependencies
 3. Run `msbuild "VirusTotal Uploader.sln"`
 4. The compiled .exe is in `VirusTotalUploader/VirusTotal Uploader/VirusTotal Uploader/bin/Debug` along with its dependencies.
-    * The first time I build the project it gave a few warnings. Deleting the `VirusTotalUploader/VirusTotal Uploader/VirusTotal Uploader/bin` directory and rebuilding resulted in 0 warnings.
+    * The first time building the project after a change it may give a few warnings. Rebuilding without making more changes usually results in 0 warnings.
 
 You may now move and run `VirusTotal Uploader.exe` from anywhere you'd like, just as long as the accompaning files are in the same directory as the exe. You may also delete the `app.publish` directory along with its contents.
 
