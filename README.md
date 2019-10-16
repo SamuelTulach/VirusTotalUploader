@@ -63,6 +63,7 @@ If you want to support me, [you can use my PayPal](https://www.paypal.me/SamuelT
  - Make code more readable for other people
  - Comment code
  - ~~Save settings to something more than just txt file~~ ✓
+ - Make an option to save results to file
 
 ## License
 This project is licensed under GPLv3. Please see [LICENSE file](https://github.com/SamuelTulach/VirusTotalUploader/blob/master/LICENSE).
