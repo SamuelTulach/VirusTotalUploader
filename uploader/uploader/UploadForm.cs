@@ -18,17 +18,19 @@ namespace uploader
 {
     public partial class UploadForm : DarkForm
     {
+        private readonly bool _reopen;
         private readonly string _fileName;
         private readonly MainForm _mainForm;
         private readonly Settings _settings;
         private Thread _uploadThread;
         private RestClient _client;
 
-        public UploadForm(MainForm mainForm, Settings settings, string fileName)
+        public UploadForm(MainForm mainForm, Settings settings, bool reopen, string fileName)
         {
             _fileName = fileName;
             _mainForm = mainForm;
             _settings = settings;
+            _reopen = reopen;
             
             InitializeComponent();
         }
@@ -136,7 +138,14 @@ namespace uploader
 
         private void UploadForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            _mainForm.Show();
+            if (_reopen)
+            {
+                _mainForm.Show();
+            }
+            else
+            {
+                _mainForm.Close();
+            }
         }
     }
 }
