@@ -6,6 +6,9 @@
 </p>
 
 #### Warning
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e56d51b0a5484a25a76984f916c3f66e)](https://app.codacy.com/manual/SamuelTulach/VirusTotalUploader?utm_source=github.com&utm_medium=referral&utm_content=SamuelTulach/VirusTotalUploader&utm_campaign=Badge_Grade_Dashboard)
+
 This is not officially supported application. It was created, because official VirusTotal desktop app is unmaintained. If you are afraid you can build it from source by yourself. Also please don't download it from any 3d party sites.
 
 #### Download
