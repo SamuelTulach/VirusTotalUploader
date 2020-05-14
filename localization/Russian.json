@@ -1,0 +1,21 @@
+{
+  "MainForm_DragFile": "Перетащите файл сюда",
+  "MainForm_More": "Настройки",
+  "SettingsForm_Title": "Настройки",
+  "SettingsForm_General": "Настройки",
+  "SettingsForm_Key": "API key",
+  "SettingsForm_Get": "Получить API key",
+  "SettingsForm_Language": "Язык",
+  "SettingsForm_Save": "Сохранить",
+  "SettingsForm_Open": "Открыть файл настроек",
+  "UploadForm_Info": "Инфомация файла",
+  "UploadForm_Upload": "Отправить",
+  "UploadForm_Cancel": "Отмена",
+  "Message_Idle": "Готов",
+  "Message_Init": "Инициализация...",
+  "Message_Check": "Проверка...",
+  "Message_Upload": "Отправка...",
+  "Message_NoLink": "Cсылка не найдена в ответе!",
+  "Message_NoSettings": "Файл настроек не существует.",
+  "Message_Saved": "Настройки сохранены."
+}
