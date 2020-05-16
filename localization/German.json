@@ -1,0 +1,21 @@
+{
+	"MainForm_DragFile": "Datei hierher ziehen",
+	"MainForm_More": "Mehr",
+	"SettingsForm_Title": "Einstellungen",
+	"SettingsForm_General": "Allgemeine Einstellungen",
+	"SettingsForm_Key": "API-Key",
+	"SettingsForm_Get": "API-Schlüssel abrufen",
+	"SettingsForm_Language": "Sprache",
+	"SettingsForm_Save": "Speichern",
+	"SettingsForm_Open": "Einstellungsdatei öffnen",
+	"UploadForm_Info": "Dateiinformationen",
+	"UploadForm_Upload": "Hochladen",
+	"UploadForm_Cancel": "Abbrechen",
+	"Message_Idle": "Leerlauf.",
+	"Message_Init": "Initialisieren ...",
+	"Message_Check": "Überprüfen ...",
+	"Message_Upload": "Hochladen ...",
+	"Message_NoLink": "Kein Permalink als Antwort gefunden!",
+	"Message_NoSettings": "Es ist keine Einstellungsdatei vorhanden.",
+	"Message_Saved": "Einstellungen gespeichert."
+}
