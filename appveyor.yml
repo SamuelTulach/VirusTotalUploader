@@ -7,3 +7,7 @@ platform:
 
 configuration:
   - Release
+
+artifacts:
+  - path: uploader/uploader/build/rel
+    name: Release build (AnyCPU)
