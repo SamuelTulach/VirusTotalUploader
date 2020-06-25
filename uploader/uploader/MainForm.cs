@@ -15,6 +15,8 @@ namespace uploader
 {
     public partial class MainForm : DarkForm
     {
+        private SettingsForm _settingsForm = new SettingsForm();
+
         public MainForm()
         {
             InitializeComponent();
@@ -41,8 +43,11 @@ namespace uploader
 
         private void moreLabel_Click(object sender, EventArgs e)
         {
-            var settingsFrom = new SettingsForm();
-            settingsFrom.Show();
+            if (_settingsForm.IsDisposed)
+            {
+                _settingsForm = new SettingsForm();
+            }
+            _settingsForm.Show();
         }
 
         private void MainForm_DragEnter(object sender, DragEventArgs e)
