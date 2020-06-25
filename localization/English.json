@@ -12,7 +12,7 @@
     "UploadForm_Upload": "Upload",
     "UploadForm_Cancel": "Cancel",
     "UploadForm_NoApiKey": "You have not entered an API key. Please go to settings and add one.",
-    "UploadForm_InvalidLength": "You have entered an API key, but the key does not have valid length. Key should contain 64 characters.",
+    "UploadForm_InvalidLength": "Invalid API key length. The key must contain 64 characters.",
     "UploadForm_InvalidKey": "Invalid API key",
     "Message_Idle": "Idle.",
     "Message_Init": "Initializing...",
