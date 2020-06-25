@@ -120,6 +120,7 @@ namespace uploader
 
             settingsGroup.Text = LocalizationHelper.Base.UploadForm_Info;
             uploadButton.Text = LocalizationHelper.Base.UploadForm_Upload;
+            statusLabel.Text = LocalizationHelper.Base.Message_Idle;
         }
 
         private void uploadButton_Click(object sender, EventArgs e)
