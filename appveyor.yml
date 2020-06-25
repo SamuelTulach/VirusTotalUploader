@@ -3,19 +3,16 @@ before_build:
   - nuget restore
 
 after_build:
-  - \"C:\\Program Files (x86)\\Inno Setup 6\\ISCC.exe\" inno_setup.iss
+  - C:\Program Files (x86)\Inno Setup 6\ISCC.exe inno_setup.iss
 
 platform:
   - Any CPU
 
 configuration:
   - Release
-  - Debug
 
 artifacts:
   - path: uploader/uploader/build/rel
     name: release_anycpu
-  - path: uploader/uploader/build/dbg
-    name: debug_anycpu
   - path: output
     name: setup_anycpu
