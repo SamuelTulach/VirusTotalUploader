@@ -14,5 +14,7 @@ before_build:
   - "nuget restore"
 configuration: 
   - Release
+environment: 
+  APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2019"
 platform: 
   - "Any CPU"
