@@ -1,3 +1,9 @@
 before_build:
   - cd uploader
   - nuget restore
+
+platform:
+  - Any CPU
+
+configuration:
+  - Release
