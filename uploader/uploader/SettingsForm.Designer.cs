@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             this.generalGroupBox = new DarkUI.Controls.DarkGroupBox();
-            this.apiLabel = new DarkUI.Controls.DarkLabel();
-            this.apiTextbox = new DarkUI.Controls.DarkTextBox();
-            this.getApiButton = new DarkUI.Controls.DarkButton();
-            this.languageLabel = new DarkUI.Controls.DarkLabel();
             this.languageCombo = new DarkUI.Controls.DarkComboBox();
+            this.languageLabel = new DarkUI.Controls.DarkLabel();
+            this.getApiButton = new DarkUI.Controls.DarkButton();
+            this.apiTextbox = new DarkUI.Controls.DarkTextBox();
+            this.apiLabel = new DarkUI.Controls.DarkLabel();
             this.saveButton = new DarkUI.Controls.DarkButton();
             this.openButton = new DarkUI.Controls.DarkButton();
             this.statusLabel = new DarkUI.Controls.DarkLabel();
@@ -51,40 +51,19 @@
             this.generalGroupBox.Controls.Add(this.apiLabel);
             this.generalGroupBox.Location = new System.Drawing.Point(13, 13);
             this.generalGroupBox.Name = "generalGroupBox";
-            this.generalGroupBox.Size = new System.Drawing.Size(340, 126);
+            this.generalGroupBox.Size = new System.Drawing.Size(403, 126);
             this.generalGroupBox.TabIndex = 0;
             this.generalGroupBox.TabStop = false;
             this.generalGroupBox.Text = "General settings";
             // 
-            // apiLabel
+            // languageCombo
             // 
-            this.apiLabel.AutoSize = true;
-            this.apiLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.apiLabel.Location = new System.Drawing.Point(7, 21);
-            this.apiLabel.Name = "apiLabel";
-            this.apiLabel.Size = new System.Drawing.Size(47, 13);
-            this.apiLabel.TabIndex = 0;
-            this.apiLabel.Text = "API key:";
-            // 
-            // apiTextbox
-            // 
-            this.apiTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.apiTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.apiTextbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.apiTextbox.Location = new System.Drawing.Point(60, 19);
-            this.apiTextbox.Name = "apiTextbox";
-            this.apiTextbox.Size = new System.Drawing.Size(274, 20);
-            this.apiTextbox.TabIndex = 1;
-            // 
-            // getApiButton
-            // 
-            this.getApiButton.Location = new System.Drawing.Point(10, 45);
-            this.getApiButton.Name = "getApiButton";
-            this.getApiButton.Padding = new System.Windows.Forms.Padding(5);
-            this.getApiButton.Size = new System.Drawing.Size(161, 23);
-            this.getApiButton.TabIndex = 2;
-            this.getApiButton.Text = "Get API key";
-            this.getApiButton.Click += new System.EventHandler(this.getApiButton_Click);
+            this.languageCombo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.languageCombo.FormattingEnabled = true;
+            this.languageCombo.Location = new System.Drawing.Point(74, 85);
+            this.languageCombo.Name = "languageCombo";
+            this.languageCombo.Size = new System.Drawing.Size(323, 21);
+            this.languageCombo.TabIndex = 4;
             // 
             // languageLabel
             // 
@@ -96,14 +75,35 @@
             this.languageLabel.TabIndex = 3;
             this.languageLabel.Text = "Language:";
             // 
-            // languageCombo
+            // getApiButton
             // 
-            this.languageCombo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.languageCombo.FormattingEnabled = true;
-            this.languageCombo.Location = new System.Drawing.Point(74, 85);
-            this.languageCombo.Name = "languageCombo";
-            this.languageCombo.Size = new System.Drawing.Size(260, 21);
-            this.languageCombo.TabIndex = 4;
+            this.getApiButton.Location = new System.Drawing.Point(10, 45);
+            this.getApiButton.Name = "getApiButton";
+            this.getApiButton.Padding = new System.Windows.Forms.Padding(5);
+            this.getApiButton.Size = new System.Drawing.Size(161, 23);
+            this.getApiButton.TabIndex = 2;
+            this.getApiButton.Text = "Get API key";
+            this.getApiButton.Click += new System.EventHandler(this.getApiButton_Click);
+            // 
+            // apiTextbox
+            // 
+            this.apiTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.apiTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.apiTextbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.apiTextbox.Location = new System.Drawing.Point(60, 19);
+            this.apiTextbox.Name = "apiTextbox";
+            this.apiTextbox.Size = new System.Drawing.Size(337, 20);
+            this.apiTextbox.TabIndex = 1;
+            // 
+            // apiLabel
+            // 
+            this.apiLabel.AutoSize = true;
+            this.apiLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.apiLabel.Location = new System.Drawing.Point(7, 21);
+            this.apiLabel.Name = "apiLabel";
+            this.apiLabel.Size = new System.Drawing.Size(47, 13);
+            this.apiLabel.TabIndex = 0;
+            this.apiLabel.Text = "API key:";
             // 
             // saveButton
             // 
@@ -131,7 +131,7 @@
             this.statusLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.statusLabel.Location = new System.Drawing.Point(253, 145);
             this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(100, 23);
+            this.statusLabel.Size = new System.Drawing.Size(163, 23);
             this.statusLabel.TabIndex = 4;
             this.statusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -139,7 +139,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(365, 180);
+            this.ClientSize = new System.Drawing.Size(428, 180);
             this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.openButton);
             this.Controls.Add(this.saveButton);
