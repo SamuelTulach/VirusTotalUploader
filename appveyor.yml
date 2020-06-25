@@ -3,7 +3,8 @@ before_build:
   - nuget restore
 
 after_build:
-  - "C:/Program Files (x86)/Inno Setup 6/ISCC.exe" inno_setup.iss
+  - set PATH="C:\Program Files (x86)\Inno Setup 6";%PATH%
+  - ISCC.exe inno_setup.iss
 
 platform:
   - Any CPU
