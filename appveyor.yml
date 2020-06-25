@@ -32,3 +32,8 @@ deploy:
   on:
     branch: master
     APPVEYOR_REPO_TAG: true 
+
+# To automatically create a release create a tag
+# > git tag 0.0.9
+# and push the tag to the repo
+# > git push origin --tags
