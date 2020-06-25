@@ -1,6 +1,7 @@
 --- 
 after_build: 
   - "set PATH=\"C:\\Program Files (x86)\\Inno Setup 6\";%PATH%"
+  - "cd C:\\projects\\virustotaluploader\\"
   - "ISCC.exe inno_setup.iss"
 artifacts: 
   - 
