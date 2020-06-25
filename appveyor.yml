@@ -1,2 +1,3 @@
 before_build:
+  - cd ./VirusTotalUploader/uploader/uploader
   - nuget restore
