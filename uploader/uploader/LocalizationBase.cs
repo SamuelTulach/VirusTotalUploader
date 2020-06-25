@@ -19,12 +19,12 @@ namespace uploader
         public string SettingsForm_Language = "Language";
         public string SettingsForm_Save = "Save";
         public string SettingsForm_Open = "Open settings file";
-        
+
         public string UploadForm_Info = "File information";
         public string UploadForm_Upload = "Upload";
         public string UploadForm_Cancel = "Cancel";
         public string UploadForm_NoApiKey = "You have not entered an API key. Please go to settings and add one.";
-        public string UploadForm_InvalidLength = "You have entered an API key, but the key does not have valid length. Key should contain 64 characters.";
+        public string UploadForm_InvalidLength = "Invalid API key length. The key must contain 64 characters.";
         public string UploadForm_InvalidKey = "Invalid API key";
 
         public string Message_Idle = "Idle.";
