@@ -20,6 +20,11 @@ namespace uploader
 
         public static void SaveSettings(Settings settings)
         {
+            if (settings.Language.Contains("Default"))
+            {
+                settings.Language = "";
+            }
+            
             var serialized = JsonConvert.SerializeObject(settings);
             var file = GetSettingsFilename();
 
@@ -27,6 +32,8 @@ namespace uploader
                 File.Delete(file);
 
             File.WriteAllText(file, serialized);
+
+            LocalizationHelper.Update();
         }
 
         public static Settings LoadSettings()

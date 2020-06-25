@@ -28,15 +28,7 @@ namespace uploader
             Directory.SetCurrentDirectory(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
             //LocalizationHelper.Export();
             
-            var settings = Settings.LoadSettings();
-            if (!string.IsNullOrEmpty(settings.Language))
-            {
-                LocalizationHelper.Load(settings.Language);
-            }
-            else
-            {
-                LocalizationHelper.Base = new LocalizationBase();
-            }
+            LocalizationHelper.Update();
 
             dragLabel.Text = LocalizationHelper.Base.MainForm_DragFile;
             moreLabel.Text = LocalizationHelper.Base.MainForm_More;

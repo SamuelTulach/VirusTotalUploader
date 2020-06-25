@@ -24,6 +24,19 @@ namespace uploader
             Base = JsonConvert.DeserializeObject<LocalizationBase>(context);
         }
 
+        public static void Update()
+        {
+            var settings = Settings.LoadSettings();
+            if (!string.IsNullOrEmpty(settings.Language))
+            {
+                Load(settings.Language);
+            }
+            else
+            {
+                Base = new LocalizationBase();
+            }
+        }
+
         // Used to create Json for new version
         public static void Export()
         {

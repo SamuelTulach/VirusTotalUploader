@@ -30,13 +30,23 @@ namespace uploader
             var settings = Settings.LoadSettings();
 
             apiTextbox.Text = settings.ApiKey;
-            languageCombo.Text = settings.Language;
 
             var languages = LocalizationHelper.GetLanguages();
             languageCombo.Items.Clear();
             foreach (var language in languages)
             {
                 languageCombo.Items.Add(language);
+            }
+
+            if (string.IsNullOrEmpty(settings.Language))
+            {
+                var defaultLanguage = languageCombo.Items.Add("Default (Build-in English)");
+                languageCombo.SelectedIndex = defaultLanguage;
+            }
+            else
+            {
+                var index = languageCombo.Items.IndexOf(settings.Language);
+                languageCombo.SelectedIndex = index;
             }
 
             generalGroupBox.Text = LocalizationHelper.Base.SettingsForm_General;
@@ -74,7 +84,12 @@ namespace uploader
             };
 
             Settings.SaveSettings(settings);
-            statusLabel.Text = LocalizationHelper.Base.Message_Saved;
+            //statusLabel.Text = LocalizationHelper.Base.Message_Saved;
+            MessageBox.Show(LocalizationHelper.Base.Message_Saved, "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information); // TODO: custom messagebox with dark theme (because default win32 one is annoying)
+
+            // Needs full restart to initialize main form strings again
+            Application.Restart();
+            Environment.Exit(0);
         }
 
         private void getApiButton_Click(object sender, EventArgs e)
