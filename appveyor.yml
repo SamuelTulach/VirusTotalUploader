@@ -1,19 +1,18 @@
-before_build:
-  - cd uploader
-  - nuget restore
-
-after_build:
-  - set PATH="C:\Program Files (x86)\Inno Setup 6";%PATH%
-  - ISCC.exe inno_setup.iss
-
-platform:
-  - Any CPU
-
-configuration:
-  - Release
-
-artifacts:
-  - path: uploader/uploader/build/rel
+--- 
+after_build: 
+  - "set PATH=\"C:\\Program Files (x86)\\Inno Setup 6\";%PATH%"
+  - "ISCC.exe inno_setup.iss"
+artifacts: 
+  - 
     name: release_anycpu
-  - path: output
+    path: uploader/uploader/build/rel
+  - 
     name: setup_anycpu
+    path: output
+before_build: 
+  - "cd uploader"
+  - "nuget restore"
+configuration: 
+  - Release
+platform: 
+  - "Any CPU"
