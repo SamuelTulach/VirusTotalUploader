@@ -64,6 +64,18 @@ namespace uploader
 
         private void Upload()
         {
+            if (string.IsNullOrEmpty(_settings.ApiKey))
+            {
+                MessageBox.Show(LocalizationHelper.Base.UploadForm_NoApiKey, LocalizationHelper.Base.UploadForm_InvalidKey, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (_settings.ApiKey.Length != 64)
+            {
+                MessageBox.Show(LocalizationHelper.Base.UploadForm_InvalidLength, LocalizationHelper.Base.UploadForm_InvalidKey, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            
             ChangeStatus(LocalizationHelper.Base.Message_Init);
             _client = new RestClient("https://www.virustotal.com");
             // TODO: check if file exists

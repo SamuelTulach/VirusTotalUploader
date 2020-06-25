@@ -26,6 +26,7 @@ namespace uploader
         {
             // Set working directory to exe location because of language files
             Directory.SetCurrentDirectory(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+            //LocalizationHelper.Export();
             
             var settings = Settings.LoadSettings();
             if (!string.IsNullOrEmpty(settings.Language))
