@@ -28,6 +28,7 @@ deploy:
   artifact: /.*\.zip/
   draft: false
   prerelease: false
+  force_update: true
   on:
     branch: master
     APPVEYOR_REPO_TAG: true 
