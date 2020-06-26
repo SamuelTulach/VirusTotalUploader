@@ -31,6 +31,9 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
+[Dirs]
+Name: "{app}"; Permissions: users-full
+
 [Files]
 Source: "uploader\uploader\build\rel\*"; DestDir: "{app}"; Flags: ignoreversion
 Source: "localization\*"; DestDir: "{app}\local"; Flags: ignoreversion
@@ -40,6 +43,6 @@ Source: "localization\*"; DestDir: "{app}\local"; Flags: ignoreversion
 Name: "{autoprograms}\{#VtuAppName}"; Filename: "{app}\{#VtuAppExeName}"
 Name: "{usersendto}\{#VtuAppName}"; Filename: "{app}\{#VtuAppExeName}" 
 
-; [Run]
-; Filename: "{app}\{#VtuAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(VtuAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
+[Run]
+Filename: "{app}\{#VtuAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(VtuAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
 
