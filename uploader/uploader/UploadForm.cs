@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -78,7 +79,11 @@ namespace uploader
             
             ChangeStatus(LocalizationHelper.Base.Message_Init);
             _client = new RestClient("https://www.virustotal.com");
-            // TODO: check if file exists
+
+            if (!File.Exists(_fileName))
+            {
+                throw new FileNotFoundException();
+            }
 
             ChangeStatus(LocalizationHelper.Base.Message_Check);
             var reportRequest = new RestRequest("vtapi/v2/file/report", Method.POST);
