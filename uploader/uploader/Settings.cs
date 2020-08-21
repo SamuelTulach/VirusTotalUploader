@@ -12,6 +12,7 @@ namespace uploader
     {
         public string ApiKey = "";
         public string Language = "";
+        public bool DirectUpload = false;
 
         public static string GetSettingsFilename()
         {

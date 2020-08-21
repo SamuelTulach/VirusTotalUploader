@@ -19,6 +19,7 @@ namespace uploader
         public string SettingsForm_Language = "Language";
         public string SettingsForm_Save = "Save";
         public string SettingsForm_Open = "Open settings file";
+        public string SettingsForm_DirectUpload = "Direct file upload";
 
         public string UploadForm_Info = "File information";
         public string UploadForm_Upload = "Upload";

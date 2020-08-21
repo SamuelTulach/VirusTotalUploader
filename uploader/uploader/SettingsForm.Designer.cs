@@ -38,12 +38,14 @@
             this.saveButton = new DarkUI.Controls.DarkButton();
             this.openButton = new DarkUI.Controls.DarkButton();
             this.statusLabel = new DarkUI.Controls.DarkLabel();
+            this.directCheckbox = new DarkUI.Controls.DarkCheckBox();
             this.generalGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // generalGroupBox
             // 
             this.generalGroupBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.generalGroupBox.Controls.Add(this.directCheckbox);
             this.generalGroupBox.Controls.Add(this.languageCombo);
             this.generalGroupBox.Controls.Add(this.languageLabel);
             this.generalGroupBox.Controls.Add(this.getApiButton);
@@ -51,7 +53,7 @@
             this.generalGroupBox.Controls.Add(this.apiLabel);
             this.generalGroupBox.Location = new System.Drawing.Point(13, 13);
             this.generalGroupBox.Name = "generalGroupBox";
-            this.generalGroupBox.Size = new System.Drawing.Size(403, 126);
+            this.generalGroupBox.Size = new System.Drawing.Size(403, 154);
             this.generalGroupBox.TabIndex = 0;
             this.generalGroupBox.TabStop = false;
             this.generalGroupBox.Text = "General settings";
@@ -108,7 +110,7 @@
             // saveButton
             // 
             this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveButton.Location = new System.Drawing.Point(13, 145);
+            this.saveButton.Location = new System.Drawing.Point(13, 173);
             this.saveButton.Name = "saveButton";
             this.saveButton.Padding = new System.Windows.Forms.Padding(5);
             this.saveButton.Size = new System.Drawing.Size(75, 23);
@@ -118,7 +120,7 @@
             // 
             // openButton
             // 
-            this.openButton.Location = new System.Drawing.Point(94, 145);
+            this.openButton.Location = new System.Drawing.Point(94, 173);
             this.openButton.Name = "openButton";
             this.openButton.Padding = new System.Windows.Forms.Padding(5);
             this.openButton.Size = new System.Drawing.Size(153, 23);
@@ -135,11 +137,20 @@
             this.statusLabel.TabIndex = 4;
             this.statusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // directCheckbox
+            // 
+            this.directCheckbox.AutoSize = true;
+            this.directCheckbox.Location = new System.Drawing.Point(13, 122);
+            this.directCheckbox.Name = "directCheckbox";
+            this.directCheckbox.Size = new System.Drawing.Size(105, 17);
+            this.directCheckbox.TabIndex = 5;
+            this.directCheckbox.Text = "Direct file upload";
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(428, 180);
+            this.ClientSize = new System.Drawing.Size(428, 208);
             this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.openButton);
             this.Controls.Add(this.saveButton);
@@ -167,5 +178,6 @@
         private DarkUI.Controls.DarkButton saveButton;
         private DarkUI.Controls.DarkButton openButton;
         private DarkUI.Controls.DarkLabel statusLabel;
+        private DarkUI.Controls.DarkCheckBox directCheckbox;
     }
 }

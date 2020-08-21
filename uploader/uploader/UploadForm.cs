@@ -63,6 +63,17 @@ namespace uploader
             uploadButton.Text = LocalizationHelper.Base.UploadForm_Upload;
         }
 
+        private void CloseWindow()
+        {
+            if (InvokeRequired)
+            {
+                this.Invoke(new Action(() => CloseWindow()));
+                return;
+            }
+
+            this.Close();
+        }
+
         private void Upload()
         {
             if (string.IsNullOrEmpty(_settings.ApiKey))
@@ -98,6 +109,8 @@ namespace uploader
             {
                 var reportLink = reportJson.permalink.ToString();
                 Process.Start(reportLink);
+
+                if (_settings.DirectUpload) CloseWindow();
             }
             catch (RuntimeBinderException)
             {
@@ -116,6 +129,8 @@ namespace uploader
                 {
                     var scanLink = scanJson.permalink.ToString();
                     Process.Start(scanLink);
+
+                    if (_settings.DirectUpload) CloseWindow();
                 }
                 catch (RuntimeBinderException)
                 {
@@ -129,18 +144,7 @@ namespace uploader
             Finish(true);
         }
 
-        private void UploadForm_Load(object sender, EventArgs e)
-        {
-            mdTextbox.Text = Utils.GetMD5(_fileName);
-            shaTextbox.Text = Utils.GetSHA1(_fileName);
-            sha2Textbox.Text = Utils.GetSHA256(_fileName);
-
-            settingsGroup.Text = LocalizationHelper.Base.UploadForm_Info;
-            uploadButton.Text = LocalizationHelper.Base.UploadForm_Upload;
-            statusLabel.Text = LocalizationHelper.Base.Message_Idle;
-        }
-
-        private void uploadButton_Click(object sender, EventArgs e)
+        private void StartUploadThread()
         {
             if (_uploadThread != null && _uploadThread.IsAlive)
             {
@@ -152,6 +156,27 @@ namespace uploader
 
             _uploadThread = new Thread(Upload);
             _uploadThread.Start();
+        }
+
+        private void UploadForm_Load(object sender, EventArgs e)
+        {
+            mdTextbox.Text = Utils.GetMD5(_fileName);
+            shaTextbox.Text = Utils.GetSHA1(_fileName);
+            sha2Textbox.Text = Utils.GetSHA256(_fileName);
+
+            settingsGroup.Text = LocalizationHelper.Base.UploadForm_Info;
+            uploadButton.Text = LocalizationHelper.Base.UploadForm_Upload;
+            statusLabel.Text = LocalizationHelper.Base.Message_Idle;
+
+            if (_settings.DirectUpload)
+            {
+                StartUploadThread();
+            }
+        }
+
+        private void uploadButton_Click(object sender, EventArgs e)
+        {
+            StartUploadThread();
         }
 
         private void UploadForm_FormClosing(object sender, FormClosingEventArgs e)

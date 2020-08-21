@@ -30,6 +30,7 @@ namespace uploader
             var settings = Settings.LoadSettings();
 
             apiTextbox.Text = settings.ApiKey;
+            directCheckbox.Checked = settings.DirectUpload;
 
             var languages = LocalizationHelper.GetLanguages();
             languageCombo.Items.Clear();
@@ -56,6 +57,7 @@ namespace uploader
             saveButton.Text = LocalizationHelper.Base.SettingsForm_Save;
             openButton.Text = LocalizationHelper.Base.SettingsForm_Open;
             this.Text = LocalizationHelper.Base.SettingsForm_Title;
+            directCheckbox.Text = LocalizationHelper.Base.SettingsForm_DirectUpload;
 
             //LocalizationHelper.Export();
         }
@@ -80,7 +82,8 @@ namespace uploader
             var settings = new Settings
             {
                 ApiKey = apiTextbox.Text, 
-                Language = languageCombo.Text
+                Language = languageCombo.Text,
+                DirectUpload = directCheckbox.Checked
             };
 
             Settings.SaveSettings(settings);
