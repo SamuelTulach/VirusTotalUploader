@@ -22,7 +22,7 @@ namespace uploader
 
         private string GetSettingsFilename()
         {
-            return Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\vtu_settings.json";
+            return Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\vtu_settings.json";
         }
 
         private void SettingsForm_Load(object sender, EventArgs e)

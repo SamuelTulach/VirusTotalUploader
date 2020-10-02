@@ -16,7 +16,7 @@ namespace uploader
 
         public static string GetSettingsFilename()
         {
-            return AppDomain.CurrentDomain.BaseDirectory + "\\vtu_settings.json";
+            return AppDomain.CurrentDomain.BaseDirectory + "vtu_settings.json";
         }
 
         public static void SaveSettings(Settings settings)
