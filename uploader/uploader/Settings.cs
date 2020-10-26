@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace uploader
@@ -16,7 +12,8 @@ namespace uploader
 
         public static string GetSettingsFilename()
         {
-            return AppDomain.CurrentDomain.BaseDirectory + "\\vtu_settings.json";
+
+            return Path.Combine(AppDomain.CurrentDomain.BaseDirectory + "vtu_settings.json");
         }
 
         public static void SaveSettings(Settings settings)

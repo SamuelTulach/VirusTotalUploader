@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             this.generalGroupBox = new DarkUI.Controls.DarkGroupBox();
+            this.directCheckbox = new DarkUI.Controls.DarkCheckBox();
             this.languageCombo = new DarkUI.Controls.DarkComboBox();
             this.languageLabel = new DarkUI.Controls.DarkLabel();
             this.getApiButton = new DarkUI.Controls.DarkButton();
@@ -38,7 +39,7 @@
             this.saveButton = new DarkUI.Controls.DarkButton();
             this.openButton = new DarkUI.Controls.DarkButton();
             this.statusLabel = new DarkUI.Controls.DarkLabel();
-            this.directCheckbox = new DarkUI.Controls.DarkCheckBox();
+            this.sendToButton = new DarkUI.Controls.DarkButton();
             this.generalGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,18 +54,29 @@
             this.generalGroupBox.Controls.Add(this.apiLabel);
             this.generalGroupBox.Location = new System.Drawing.Point(13, 13);
             this.generalGroupBox.Name = "generalGroupBox";
-            this.generalGroupBox.Size = new System.Drawing.Size(403, 154);
+            this.generalGroupBox.Size = new System.Drawing.Size(443, 155);
             this.generalGroupBox.TabIndex = 0;
             this.generalGroupBox.TabStop = false;
             this.generalGroupBox.Text = "General settings";
             // 
+            // directCheckbox
+            // 
+            this.directCheckbox.AutoSize = true;
+            this.directCheckbox.Location = new System.Drawing.Point(13, 122);
+            this.directCheckbox.Name = "directCheckbox";
+            this.directCheckbox.Size = new System.Drawing.Size(105, 17);
+            this.directCheckbox.TabIndex = 5;
+            this.directCheckbox.Text = "Direct file upload";
+            // 
             // languageCombo
             // 
+            this.languageCombo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.languageCombo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.languageCombo.FormattingEnabled = true;
             this.languageCombo.Location = new System.Drawing.Point(74, 85);
             this.languageCombo.Name = "languageCombo";
-            this.languageCombo.Size = new System.Drawing.Size(323, 21);
+            this.languageCombo.Size = new System.Drawing.Size(363, 21);
             this.languageCombo.TabIndex = 4;
             // 
             // languageLabel
@@ -89,12 +101,14 @@
             // 
             // apiTextbox
             // 
+            this.apiTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.apiTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
             this.apiTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.apiTextbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.apiTextbox.Location = new System.Drawing.Point(60, 19);
             this.apiTextbox.Name = "apiTextbox";
-            this.apiTextbox.Size = new System.Drawing.Size(337, 20);
+            this.apiTextbox.Size = new System.Drawing.Size(377, 20);
             this.apiTextbox.TabIndex = 1;
             // 
             // apiLabel
@@ -137,20 +151,22 @@
             this.statusLabel.TabIndex = 4;
             this.statusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // directCheckbox
+            // sendToButton
             // 
-            this.directCheckbox.AutoSize = true;
-            this.directCheckbox.Location = new System.Drawing.Point(13, 122);
-            this.directCheckbox.Name = "directCheckbox";
-            this.directCheckbox.Size = new System.Drawing.Size(105, 17);
-            this.directCheckbox.TabIndex = 5;
-            this.directCheckbox.Text = "Direct file upload";
+            this.sendToButton.Location = new System.Drawing.Point(256, 173);
+            this.sendToButton.Name = "sendToButton";
+            this.sendToButton.Padding = new System.Windows.Forms.Padding(5);
+            this.sendToButton.Size = new System.Drawing.Size(200, 23);
+            this.sendToButton.TabIndex = 5;
+            this.sendToButton.Text = "Add To \'Send To\' Menu";
+            this.sendToButton.Click += new System.EventHandler(this.SendToButton_Click);
             // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(428, 208);
+            this.ClientSize = new System.Drawing.Size(464, 213);
+            this.Controls.Add(this.sendToButton);
             this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.openButton);
             this.Controls.Add(this.saveButton);
@@ -179,5 +195,6 @@
         private DarkUI.Controls.DarkButton openButton;
         private DarkUI.Controls.DarkLabel statusLabel;
         private DarkUI.Controls.DarkCheckBox directCheckbox;
+        private DarkUI.Controls.DarkButton sendToButton;
     }
 }

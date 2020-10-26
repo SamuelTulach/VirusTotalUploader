@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 using Newtonsoft.Json;
 
 namespace uploader
@@ -41,7 +36,7 @@ namespace uploader
         public static void Export()
         {
             Base = new LocalizationBase();
-            var serialized = JsonConvert.SerializeObject(LocalizationHelper.Base);
+            var serialized = JsonConvert.SerializeObject(LocalizationHelper.Base, Formatting.Indented);
             File.WriteAllText("export.json", serialized);
         }
     }

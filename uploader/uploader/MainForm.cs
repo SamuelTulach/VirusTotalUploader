@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DarkUI.Forms;
 
@@ -26,7 +19,7 @@ namespace uploader
         {
             // Set working directory to exe location because of language files
             Directory.SetCurrentDirectory(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-            //LocalizationHelper.Export();
+            // LocalizationHelper.Export();
             
             LocalizationHelper.Update();
 

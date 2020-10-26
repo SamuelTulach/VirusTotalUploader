@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DarkUI.Forms;
 
@@ -15,18 +8,19 @@ namespace uploader
 {
     public partial class SettingsForm : DarkForm
     {
+        private string sendToPath;
         public SettingsForm()
         {
             InitializeComponent();
         }
 
-        private string GetSettingsFilename()
-        {
-            return Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\vtu_settings.json";
-        }
 
         private void SettingsForm_Load(object sender, EventArgs e)
         {
+            sendToPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Microsoft\\Windows\\SendTo\\VirusTotal.com.lnk");
+
+            sendToButton.Text = File.Exists(sendToPath) ? LocalizationHelper.Base.SettingsForm_RemoveFromSendToMenu : LocalizationHelper.Base.SettingsForm_AddToSendToMenu;
+
             var settings = Settings.LoadSettings();
 
             apiTextbox.Text = settings.ApiKey;
@@ -98,6 +92,25 @@ namespace uploader
         private void getApiButton_Click(object sender, EventArgs e)
         {
             Process.Start("https://developers.virustotal.com/reference");
+        }
+
+        private void SendToButton_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(sendToPath))
+                File.Delete(sendToPath);
+            else
+            {
+                var shell = new IWshRuntimeLibrary.WshShell();
+
+                var windowsApplicationShortcut = (IWshRuntimeLibrary.IWshShortcut)shell.CreateShortcut(sendToPath);
+                windowsApplicationShortcut.Description      = "Upload file to VirusTotal.com for analysis";
+                windowsApplicationShortcut.WorkingDirectory = Application.StartupPath;
+                windowsApplicationShortcut.TargetPath       = Application.ExecutablePath;
+                windowsApplicationShortcut.Save();
+            }
+
+            sendToButton.Text = File.Exists(sendToPath) ? LocalizationHelper.Base.SettingsForm_RemoveFromSendToMenu : LocalizationHelper.Base.SettingsForm_AddToSendToMenu;
+
         }
     }
 }

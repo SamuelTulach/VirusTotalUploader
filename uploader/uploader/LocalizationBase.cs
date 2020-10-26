@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace uploader
+﻿namespace uploader
 {
     class LocalizationBase
     {
@@ -20,6 +13,8 @@ namespace uploader
         public string SettingsForm_Save = "Save";
         public string SettingsForm_Open = "Open settings file";
         public string SettingsForm_DirectUpload = "Direct file upload";
+        public string SettingsForm_AddToSendToMenu = "Add To 'Send To' Menu";
+        public string SettingsForm_RemoveFromSendToMenu = "Remove from 'Send To' Menu";
 
         public string UploadForm_Info = "File information";
         public string UploadForm_Upload = "Upload";
