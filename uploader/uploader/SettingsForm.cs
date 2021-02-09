@@ -20,11 +20,6 @@ namespace uploader
             InitializeComponent();
         }
 
-        private string GetSettingsFilename()
-        {
-            return Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\vtu_settings.json";
-        }
-
         private void SettingsForm_Load(object sender, EventArgs e)
         {
             var settings = Settings.LoadSettings();
@@ -79,6 +74,8 @@ namespace uploader
 
         private void saveButton_Click(object sender, EventArgs e)
         {
+            apiTextbox.Text = apiTextbox.Text.Trim();
+
             var settings = new Settings
             {
                 ApiKey = apiTextbox.Text, 
