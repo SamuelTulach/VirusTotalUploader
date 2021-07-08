@@ -127,12 +127,19 @@ namespace uploader
 
                 try
                 {
-                    var scanLink = scanJson.permalink.ToString();
+                    string scanLink = scanJson.permalink.ToString();
+
+                    // An example link can look like this:
+                    // https://www.virustotal.com/gui/file/<filehash_or_resource_id>/detection/<scanid>
+                    // If we don't remove the the scanid, then it will fail on new files since the scan did not finish
+                    // Removing it like this will show the analysis progress for new files
+                    scanLink = scanLink.Remove(scanLink.IndexOf("/detection"));
+                    
                     Process.Start(scanLink);
 
                     if (_settings.DirectUpload) CloseWindow();
                 }
-                catch (RuntimeBinderException)
+                catch (Exception)
                 {
                     // Response does not contain permalink so it failed
                     ChangeStatus(LocalizationHelper.Base.Message_NoLink);
