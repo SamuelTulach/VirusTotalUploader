@@ -13,7 +13,7 @@
     "UploadForm_Upload": "Tải lên",
     "UploadForm_Cancel": "Huỷ",
     "UploadForm_NoApiKey": "Bạn chưa nhập khoá API. Vui lòng mở cài đặt và thêm một cái.",
-    "UploadForm_InvalidLength": ". Khoá API phải có 64 chữ.",
+    "UploadForm_InvalidLength": ". Độ dài tối đa của khoá API là 60 chữ cái.",
     "UploadForm_InvalidKey": "Khoá API không hợp lệ",
     "Message_Idle": "",
     "Message_Init": "Đang khởi tạo...",
