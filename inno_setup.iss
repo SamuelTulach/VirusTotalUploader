@@ -1,6 +1,6 @@
 
 #define VtuAppName "VirusTotal Uploader"
-#define VtuAppVersion "installer"
+#define VtuAppVersion "0.1.8"
 #define VtuAppPublisher "Samuel Tulach"
 #define VtuAppURL "https://github.com/SamuelTulach/VirusTotalUploader"
 #define VtuAppExeName "uploader.exe"
