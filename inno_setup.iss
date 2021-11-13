@@ -1,6 +1,6 @@
 
 #define VtuAppName "VirusTotal Uploader"
-#define VtuAppVersion "0.0.9"
+#define VtuAppVersion "installer"
 #define VtuAppPublisher "Samuel Tulach"
 #define VtuAppURL "https://github.com/SamuelTulach/VirusTotalUploader"
 #define VtuAppExeName "uploader.exe"
@@ -41,7 +41,10 @@ Source: "localization\*"; DestDir: "{app}\local"; Flags: ignoreversion
 
 [Icons]
 Name: "{autoprograms}\{#VtuAppName}"; Filename: "{app}\{#VtuAppExeName}"
-Name: "{usersendto}\{#VtuAppName}"; Filename: "{app}\{#VtuAppExeName}" 
+
+[Registry]
+Root: "HKCR"; Subkey: "*\shell\Upload to VirusTotal"; ValueType: none; ValueName: ""; ValueData: ""; Flags: uninsdeletekey
+Root: "HKCR"; Subkey: "*\shell\Upload to VirusTotal\command"; ValueType: string; ValueName: ""; ValueData: """{app}\{#VtuAppExeName}"" ""%1"""; Flags: uninsdeletekey
 
 [Run]
 Filename: "{app}\{#VtuAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(VtuAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
