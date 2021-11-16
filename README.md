@@ -9,7 +9,7 @@
 #### Warning
 This is not officially supported application. It was created because official VirusTotal desktop app is unmaintained. If you are afraid, you can build it from source by yourself. Also please don't download it from any third-party sites.
 
-#### Download (<a href="https://download.visualstudio.microsoft.com/download/pr/c6a74d6b-576c-4ab0-bf55-d46d45610730/f70d2252c9f452c2eb679b8041846466/windowsdesktop-runtime-5.0.1-win-x64.exe"><img alt="GitHub release" src="https://img.shields.io/badge/Requires-.NET%204.6%20(or later)%20Desktop%20Runtime-purple"></a>)
+#### Download (<a href="https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net46-web-installer"><img alt="GitHub release" src="https://img.shields.io/badge/Requires-.NET%204.6%20(or later)%20Framework-blue"></a>)
 Please go to [releases page](https://github.com/SamuelTulach/VirusTotalUploader/releases) to download compiled app and installer. *Don't forget to star the repo!*
 
 #### How to get API key
