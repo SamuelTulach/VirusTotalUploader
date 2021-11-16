@@ -26,4 +26,4 @@ It is really easy! Just drag and drop file into the app and voila!
 If you have any idea how to make this app better, please [create a pull request](https://github.com/SamuelTulach/VirusTotalUploader/compare). If you find any bug, please [create an issue](https://github.com/SamuelTulach/VirusTotalUploader/issues/new).
 
 #### License
-This project is licensed under GPLv3 and it's libraries under their license. Please check both LICENSE.txt and LICENSE_3rd.txt.
+This project is licensed under GPLv3 and it's libraries under their license. Please check both [LICENSE.txt](LICENSE.txt) and [LICENSE_3rd.txt](LICENSE_3rd.txt).
