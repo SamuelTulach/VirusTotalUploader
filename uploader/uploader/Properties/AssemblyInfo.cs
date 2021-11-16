@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 #endif
 [assembly: AssemblyCompany("Samuel Tulach")]
 [assembly: AssemblyProduct("VirusTotalUploader")]
-[assembly: AssemblyCopyright("Copyright © 2021 Samuel Tulach")]
+[assembly: AssemblyCopyright("Copyright © 2020-2021 Samuel Tulach")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
 [assembly: Guid("b5329de8-8cd7-4b08-9e87-26778404c7a5")]
