@@ -15,12 +15,12 @@ Please go to [releases page](https://github.com/SamuelTulach/VirusTotalUploader/
 #### How to get API key
 It is really simple! All you need to do is to go to [VirusTotal official page](https://www.virustotal.com/), create profile and copy your key.
 
-<img src="assets/1.gif" width="75%" height="75%" />
+<img src="assets/1.gif" />
 
 #### How to use
 It is really easy! Just drag and drop file into the app and voila!
 
-<img src="assets/2.gif" width="75%" height="75%" />
+<img src="assets/2.gif" />
 
 #### Contributing
 If you have any idea how to make this app better, please [create a pull request](https://github.com/SamuelTulach/VirusTotalUploader/compare). If you find any bug, please [create an issue](https://github.com/SamuelTulach/VirusTotalUploader/issues/new).
