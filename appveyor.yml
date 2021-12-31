@@ -19,22 +19,3 @@ environment:
   APPVEYOR_BUILD_WORKER_IMAGE: "Visual Studio 2019"
 platform: 
   - "Any CPU"
-deploy:
-  release: uploader-v$(appveyor_build_version)
-  description: "If you are not sure what to download, please use `setup_anycpu.zip`. If you want to download a portable version of the uploader, use `release_anycpu.zip`, but keep in mind that you will have to manually download localization files."
-  provider: GitHub
-  auth_token:
-    secure: SM1sS8TNnk3rYWpOpouTIcV1g+Wq0wR65TNgTUS0pYN7fC7XSFSW+i0HUqn1gFYm
-  artifact: /.*\.zip/
-  draft: false
-  prerelease: false
-  force_update: true
-  tag: $(APPVEYOR_REPO_TAG_NAME)
-  on:
-    branch: master
-    APPVEYOR_REPO_TAG: true 
-
-# To automatically create a release create a tag
-# > git tag 0.0.9
-# and push the tag to the repo
-# > git push origin --tags
