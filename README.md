@@ -1,29 +1,28 @@
-<div><p align="center"><img src="https://raw.githubusercontent.com/SamuelTulach/VirusTotalUploader/master/uploader/uploader/icon.ico" width="75" height="75" /></p><h3 align="center">VirusTotal Uploader</h3></div>
-<p align="center">Open-source desktop uploader for VirusTotal.</p>
-<p align="center">
-<a href="https://gitter.im/VirusTotalUploader/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"><img src="https://badges.gitter.im/VirusTotalUploader/Lobby.svg" href="https://gitter.im/VirusTotalUploader/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge" /></a>
-<a href="https://ci.appveyor.com/project/SamuelTulach/virustotaluploader"><img src="https://ci.appveyor.com/api/projects/status/ulpfhv1v32bhwaju?svg=true" href="https://ci.appveyor.com/project/SamuelTulach/virustotaluploader" /></a>
-<a href="https://www.codacy.com/manual/SamuelTulach/VirusTotalUploader?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=SamuelTulach/VirusTotalUploader&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/4c55d4a2ca28421b989d6f16ec0399bd" href="https://www.codacy.com/manual/SamuelTulach/VirusTotalUploader?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=SamuelTulach/VirusTotalUploader&amp;utm_campaign=Badge_Grade" /></a>
+<div><p align="center"><img src="https://raw.githubusercontent.com/firepacket/VirusTotalUploader/master/uploader/uploader/icon.ico" width="75" height="75" /></p><h3 align="center">VirusTotal Uploader FIXED</h3></div>
+<p align="center">Open-source desktop uploader for VirusTotal.<br/>
+<i><b>Single EXE, Portable Executable, No extra files, Localized, No API Key Required!, No Setup, Right-Click Context Menu Support!</b></i>
 </p>
-
-#### Warning
-This is not officially supported application. It was created because official VirusTotal desktop app is unmaintained. If you are afraid, you can build it from source by yourself. Also please don't download it from any third-party sites.
+<p align="center">
 
 #### Download (<a href="https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net46-web-installer"><img alt="GitHub release" src="https://img.shields.io/badge/Requires-.NET%20Framework%204.6%20(or later)-blue"></a>)
-Please go to [releases page](https://github.com/SamuelTulach/VirusTotalUploader/releases) to download compiled app and installer. *Don't forget to star the repo!*
+Please go to [releases page](https://github.com/firepacket/VirusTotalUploader/releases) to download <b>the single .exe file</b>!
 
 #### How to get API key
-It is really simple! All you need to do is to go to [VirusTotal official page](https://www.virustotal.com/), create profile and copy your key.
+<b>If you don't have an API key, the application will still work using a different method!</b>
+But if you get one, your experience will be better! All you need to do is to go to [VirusTotal official page](https://www.virustotal.com/), create profile and copy your key into Settings.<br/>
+
 
 <img src="assets/1.gif" />
 
 #### How to use
-It is really easy! Just drag and drop file into the app and voila!
-
+It is really easy! Just drag and drop file into the app and voila! Or right-click any file and select "Virus Total Uploader".</br>
+Click on settings to add Context Menu (right-click) support and Auto-Upload</br>
+Click "Reset" to uninstall if you want to move the .exe, or you can move it, click "Reset" and "Save" again for the Context Menu.
 <img src="assets/2.gif" />
 
-#### Contributing
-If you have any idea how to make this app better, please [create a pull request](https://github.com/SamuelTulach/VirusTotalUploader/compare). If you find any bug, please [create an issue](https://github.com/SamuelTulach/VirusTotalUploader/issues/new).
+#### New Undocumented Feature
+If you create a String value in *HKEY_LOCAL_MACHINE\SOFTWARE\Classes\*\shell\Virus Total Uploader\* name it "Browser" and set the value to a different browser .exe path (no quotes) that you want to use.<br/>
+<b>NOTE: You can only do this if you have enabled Context Menu!</b> It was to just keep things tidy for a feature most people won't use, just for me.
 
 #### License
 This project is licensed under GPLv3 and it's libraries under their license. Please check both [LICENSE.txt](LICENSE.txt) and [LICENSE_3rd.txt](LICENSE_3rd.txt).

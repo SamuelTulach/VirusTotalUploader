@@ -19,13 +19,14 @@ namespace uploader
 
         public MainForm()
         {
+			if (File.Exists(Program.path))
+				File.Delete(Program.path);
             InitializeComponent();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             // Set working directory to exe location because of language files
-            Directory.SetCurrentDirectory(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
             //LocalizationHelper.Export();
             
             LocalizationHelper.Update();
@@ -74,5 +75,10 @@ namespace uploader
                 this.Hide();
             }
         }
-    }
+
+		private void DarkButton1_Click(object sender, EventArgs e)
+		{
+			LocalizationHelper.Export();
+		}
+	}
 }

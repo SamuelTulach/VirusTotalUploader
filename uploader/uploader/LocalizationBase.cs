@@ -10,7 +10,7 @@ namespace uploader
     class LocalizationBase
     {
         public string MainForm_DragFile = "Drag file here";
-        public string MainForm_More = "More";
+        public string MainForm_More = "Settings";
 
         public string SettingsForm_Title = "Settings";
         public string SettingsForm_General = "General settings";
@@ -19,9 +19,14 @@ namespace uploader
         public string SettingsForm_Language = "Language";
         public string SettingsForm_Save = "Save";
         public string SettingsForm_Open = "Open settings file";
-        public string SettingsForm_DirectUpload = "Direct file upload";
+        public string SettingsForm_DirectUpload = "Automatic Upload?";
+		public string SettingsForm_Reset = "Reset all settings?";
+		public string SettingsForm_Sure = "Are you sure?";
+		public string SettingsForm_Context = "Add to Context Menu?";
+		public string SettingsForm_ResetBtn = "Reset";
 
-        public string UploadForm_Info = "File information";
+
+		public string UploadForm_Info = "File information";
         public string UploadForm_Upload = "Upload";
         public string UploadForm_Cancel = "Cancel";
         public string UploadForm_NoApiKey = "You have not entered an API key. Please go to settings and add one.";

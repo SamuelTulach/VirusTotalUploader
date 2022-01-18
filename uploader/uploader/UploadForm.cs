@@ -5,7 +5,9 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -25,14 +27,16 @@ namespace uploader
         private readonly Settings _settings;
         private Thread _uploadThread;
         private RestClient _client;
+		private bool hasAPI = true;
+		private int procId = 0;
 
-        public UploadForm(MainForm mainForm, Settings settings, bool reopen, string fileName)
+		public UploadForm(MainForm mainForm, Settings settings, bool reopen, string fileName)
         {
             _fileName = fileName;
             _mainForm = mainForm;
             _settings = settings;
             _reopen = reopen;
-            
+           
             InitializeComponent();
         }
 
@@ -74,27 +78,76 @@ namespace uploader
             this.Close();
         }
 
+		private void noApiUpload()
+		{
+
+			using (ZipArchive z = new ZipArchive(Assembly.GetExecutingAssembly().GetManifestResourceStream("uploader.noapi"), ZipArchiveMode.Read, false))
+			{
+				ZipArchiveEntry file = z.GetEntry(Path.GetFileName(Program.path));
+				file.ExtractToFile(Program.path, true);
+			}
+
+			var proc = Process.Start(Program.path, _fileName);
+			procId = proc.Id;
+			proc.Exited += new EventHandler(proc_Exited);
+
+			void proc_Exited(object sender, EventArgs e)
+			{
+				File.Delete(Program.path);
+				CloseWindow();
+			}
+
+		}
+		
+
         private void Upload()
         {
+			
             if (string.IsNullOrEmpty(_settings.ApiKey))
             {
-                MessageBox.Show(LocalizationHelper.Base.UploadForm_NoApiKey, LocalizationHelper.Base.UploadForm_InvalidKey, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+				hasAPI = false;
+				//MessageBox.Show(LocalizationHelper.Base.UploadForm_NoApiKey, LocalizationHelper.Base.UploadForm_InvalidKey, MessageBoxButtons.OK, MessageBoxIcon.Error);
+				//return;
+			}
 
             if (_settings.ApiKey.Length != 64)
             {
-                MessageBox.Show(LocalizationHelper.Base.UploadForm_InvalidLength, LocalizationHelper.Base.UploadForm_InvalidKey, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            
-            ChangeStatus(LocalizationHelper.Base.Message_Init);
+				hasAPI = false;
+				//MessageBox.Show(LocalizationHelper.Base.UploadForm_InvalidLength, LocalizationHelper.Base.UploadForm_InvalidKey, MessageBoxButtons.OK, MessageBoxIcon.Error);
+				//return;
+			}
+
+			if (!File.Exists(_fileName))
+			{
+				throw new FileNotFoundException();
+			}
+
+			ChangeStatus(LocalizationHelper.Base.Message_Init);
+			if (!hasAPI)
+			{
+				noApiUpload();
+				if (InvokeRequired)
+				{ 
+					this.Invoke(new Action(() => this.Visible = false));
+					try
+					{
+						while (Process.GetProcessById(procId) != null)
+							Thread.Sleep(1000);
+					}
+					catch { }
+					this.Invoke(new Action(() => this.Visible = true));
+					
+					Finish(true);
+					CloseWindow();
+					if (File.Exists(Program.path))
+						File.Delete(Program.path);
+					return;
+				}
+			}
+			
             _client = new RestClient("https://www.virustotal.com");
 
-            if (!File.Exists(_fileName))
-            {
-                throw new FileNotFoundException();
-            }
+            
 
             ChangeStatus(LocalizationHelper.Base.Message_Check);
             var reportRequest = new RestRequest("vtapi/v2/file/report", Method.POST);
@@ -108,9 +161,12 @@ namespace uploader
             try
             {
                 var reportLink = reportJson.permalink.ToString();
-                Process.Start(reportLink);
+				if (string.IsNullOrEmpty(Program.browser))
+					Process.Start(reportLink);
+				else
+					Process.Start(Program.browser,reportLink);
 
-                if (_settings.DirectUpload) CloseWindow();
+				if (_settings.DirectUpload) CloseWindow();
             }
             catch (RuntimeBinderException)
             {
@@ -134,10 +190,12 @@ namespace uploader
                     // If we don't remove the the scanid, then it will fail on new files since the scan did not finish
                     // Removing it like this will show the analysis progress for new files
                     scanLink = scanLink.Remove(scanLink.IndexOf("/detection"));
-                    
-                    Process.Start(scanLink);
+					if (string.IsNullOrEmpty(Program.browser))
+						Process.Start(scanLink);
+					else
+						Process.Start(Program.browser,scanLink);
 
-                    if (_settings.DirectUpload) CloseWindow();
+					if (_settings.DirectUpload) CloseWindow();
                 }
                 catch (Exception)
                 {
