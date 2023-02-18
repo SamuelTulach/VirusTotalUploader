@@ -361,3 +361,6 @@ FodyWeavers.xsd
 
 # Custom build folder
 build/
+
+# Contains saved cert password in the project files
+installer/

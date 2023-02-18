@@ -27,3 +27,6 @@ If you have any idea how to make this app better, please [create a pull request]
 
 #### License
 This project is licensed under GPLv3 and it's libraries under their license. Please check both [LICENSE.txt](LICENSE.txt) and [LICENSE_3rd.txt](LICENSE_3rd.txt).
+
+#### Special thanks
+Thanks to [AdvancedInstaller](https://www.advancedinstaller.com) for providing a professional license for free for this project.
