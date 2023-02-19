@@ -97,7 +97,7 @@ namespace uploader
             }
 
             ChangeStatus(LocalizationHelper.Base.Message_Check);
-            var reportRequest = new RestRequest("vtapi/v2/file/report", Method.POST);
+            var reportRequest = new RestRequest("vtapi/v2/file/report", Method.Post);
             reportRequest.AddParameter("apikey", _settings.ApiKey);
             reportRequest.AddParameter("resource", Utils.GetMD5(_fileName));
 
@@ -116,7 +116,7 @@ namespace uploader
             {
                 // Json does not contain permalink which means it's a new file (or the request failed)
                 ChangeStatus(LocalizationHelper.Base.Message_Upload);
-                var scanRequest = new RestRequest("vtapi/v2/file/scan", Method.POST);
+                var scanRequest = new RestRequest("vtapi/v2/file/scan", Method.Post);
                 scanRequest.AddParameter("apikey", _settings.ApiKey);
                 scanRequest.AddFile("file", _fileName);
 
