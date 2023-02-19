@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="20.3.2" version="20.3.2" Modules="professional" RootPath="." Language="en" Id="{154F5C35-A008-4936-9496-6B1C4128A0F0}">
+  <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
+    <ROW Name="AssetGenPkgDestFolderPath" Value="Generated Assets" ValueType="1"/>
+    <ROW Name="HiddenItems" Value="MsiDriverPackagesComponent;UserAccountsComponent;ScheduledTasksComponent;SqlConnectionComponent;AutorunComponent;FirewallExceptionComponent;GameUxComponent;MsiDirectEditorComponent;SharePointSlnComponent;SilverlightSlnComponent;MultipleInstancesComponent;SccmComponent;ActSyncAppComponent;CPLAppletComponent;AppXAppDetailsComponent;FixupComponent;AppXCapabilitiesComponent;AppXDependenciesComponent;AppXProductDetailsComponent;AppXVisualAssetsComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent;MsiXDiffComponent;MsixManifestEditorComponent"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="AI_CURRENT_YEAR" Value="2023" ValueLocId="-"/>
+    <ROW Property="AI_PACKAGING_TOOL" Value="Advanced Installer 20.3.2 build 850835f9" ValueLocId="-"/>
+    <ROW Property="AI_PRODUCTNAME_ARP" Value="VirusTotalUploader"/>
+    <ROW Property="AI_ThemeStyle" Value="aero" MsiKey="AI_ThemeStyle"/>
+    <ROW Property="AI_UNINSTALLER" Value="msiexec.exe"/>
+    <ROW Property="ALLUSERS" Value="1"/>
+    <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
+    <ROW Property="ARPCONTACT" Value="samuel@tulach.cc"/>
+    <ROW Property="ARPNOMODIFY" Value="1"/>
+    <ROW Property="ARPNOREPAIR" Value="1"/>
+    <ROW Property="ARPPRODUCTICON" Value="icon.exe" Type="8"/>
+    <ROW Property="ARPSYSTEMCOMPONENT" Value="1"/>
+    <ROW Property="ARPURLINFOABOUT" Value="https://github.com/SamuelTulach/VirusTotalUploader/issues"/>
+    <ROW Property="ARPURLUPDATEINFO" Value="https://github.com/SamuelTulach/VirusTotalUploader/releases"/>
+    <ROW Property="LIMITUI" Value="1"/>
+    <ROW Property="Manufacturer" Value="Samuel Tulach"/>
+    <ROW Property="ProductCode" Value="1033:{A7163FDD-C032-4D5B-9027-3C1C2D5CFAF9} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+    <ROW Property="ProductName" Value="VirusTotalUploader"/>
+    <ROW Property="ProductVersion" Value="0.2.1"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
+    <ROW Property="UpgradeCode" Value="{A8801105-D5F9-4B0E-A81E-4BB5BEFD2FB6}"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="MsiBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="MsiBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40" MultiBuildValue="MsiBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="MsiBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50" MultiBuildValue="MsiBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50Display" MultiBuildValue="MsiBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5X" MultiBuildValue="MsiBuild:Windows XP/2003" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5XDisplay" MultiBuildValue="MsiBuild:Windows XP/2003" ValueLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="Assets_Dir" Directory_Parent="APPDIR" DefaultDir="Assets"/>
+    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
+    <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+    <ROW Directory="local_Dir" Directory_Parent="APPDIR" DefaultDir="local"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="AI_CustomARPName" ComponentId="{EC2BFE14-84DD-4313-9E8B-EC6E9234A252}" Directory_="APPDIR" Attributes="4" KeyPath="DisplayName" Options="1"/>
+    <ROW Component="AI_DisableModify" ComponentId="{2C974D0F-DB8E-4B64-B3B4-AD222AF12F26}" Directory_="APPDIR" Attributes="4" KeyPath="NoModify" Options="1"/>
+    <ROW Component="APPDIR" ComponentId="{685883D7-4E56-4FB8-904A-24BE47BA1929}" Directory_="APPDIR" Attributes="0"/>
+    <ROW Component="Czech.json" ComponentId="{45D696B5-5897-4832-8918-BBC4A747A37F}" Directory_="local_Dir" Attributes="0" KeyPath="Czech.json" Type="0"/>
+    <ROW Component="DarkUI.dll" ComponentId="{833806F5-1729-4587-8F81-BB693112100A}" Directory_="APPDIR" Attributes="0" KeyPath="DarkUI.dll"/>
+    <ROW Component="MUIVerb_1" ComponentId="{39681D2A-4655-4670-856C-C6C7A76B4F0B}" Directory_="APPDIR" Attributes="6" KeyPath="MUIVerb_3"/>
+    <ROW Component="Newtonsoft.Json.dll" ComponentId="{C58FF6D9-ACF7-4E18-86FF-957F24F786B6}" Directory_="APPDIR" Attributes="0" KeyPath="Newtonsoft.Json.dll"/>
+    <ROW Component="ProductInformation" ComponentId="{D1DE92A8-EF08-44D9-914C-ABDD26A38B35}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
+    <ROW Component="RestSharp.dll" ComponentId="{8C1B702E-0C4C-4B04-B388-C7B27391CF1D}" Directory_="APPDIR" Attributes="0" KeyPath="RestSharp.dll"/>
+    <ROW Component="RestSharp.xml" ComponentId="{68296D40-2FF1-4FF4-BA71-B1AA7B31BEE0}" Directory_="APPDIR" Attributes="0" KeyPath="RestSharp.xml" Type="0"/>
+    <ROW Component="SHORTCUTDIR" ComponentId="{195E0053-1A91-4A49-9BB7-5FE012F9B12E}" Directory_="SHORTCUTDIR" Attributes="0"/>
+    <ROW Component="contextmenudll.dll" ComponentId="{7D849231-5F9B-4EB6-BE46-11E624CE6647}" Directory_="Assets_Dir" Attributes="0" KeyPath="contextmenudll.dll"/>
+    <ROW Component="uploader.exe" ComponentId="{69147787-54E9-49C4-94A6-4029FE0E0E6F}" Directory_="APPDIR" Attributes="0" KeyPath="uploader.exe"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="0" Level="1" Directory_="APPDIR" Attributes="0"/>
+    <ROW Feature="context_menu_sparse" Title="Context menu shortcut" Description="Context menu shortcut" Display="5" Level="1" Directory_="APPDIR" Attributes="0"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="DarkUI.dll" Component_="DarkUI.dll" FileName="DarkUI.dll" Attributes="0" SourcePath="..\uploader\uploader\build\rel\DarkUI.dll" SelfReg="false" DigSign="true"/>
+    <ROW File="Newtonsoft.Json.dll" Component_="Newtonsoft.Json.dll" FileName="NEWTON~1.DLL|Newtonsoft.Json.dll" Attributes="0" SourcePath="..\uploader\uploader\build\rel\Newtonsoft.Json.dll" SelfReg="false"/>
+    <ROW File="RestSharp.dll" Component_="RestSharp.dll" FileName="RESTSH~1.DLL|RestSharp.dll" Attributes="0" SourcePath="..\uploader\uploader\build\rel\RestSharp.dll" SelfReg="false" DigSign="true"/>
+    <ROW File="RestSharp.xml" Component_="RestSharp.xml" FileName="RESTSH~1.XML|RestSharp.xml" Attributes="0" SourcePath="..\uploader\uploader\build\rel\RestSharp.xml" SelfReg="false"/>
+    <ROW File="uploader.exe" Component_="uploader.exe" FileName="uploader.exe" Attributes="0" SourcePath="..\uploader\uploader\build\rel\uploader.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="uploader.exe.config" Component_="RestSharp.xml" FileName="UPLOAD~1.CON|uploader.exe.config" Attributes="0" SourcePath="..\uploader\uploader\build\rel\uploader.exe.config" SelfReg="false"/>
+    <ROW File="uploader.pdb" Component_="uploader.exe" FileName="uploader.pdb" Attributes="0" SourcePath="..\uploader\uploader\build\rel\uploader.pdb" SelfReg="false"/>
+    <ROW File="Czech.json" Component_="Czech.json" FileName="CZECH~1.JSO|Czech.json" Attributes="0" SourcePath="..\uploader\uploader\build\rel\local\Czech.json" SelfReg="false"/>
+    <ROW File="English.json" Component_="Czech.json" FileName="ENGLIS~1.JSO|English.json" Attributes="0" SourcePath="..\uploader\uploader\build\rel\local\English.json" SelfReg="false"/>
+    <ROW File="French.json" Component_="Czech.json" FileName="FRENCH~1.JSO|French.json" Attributes="0" SourcePath="..\uploader\uploader\build\rel\local\French.json" SelfReg="false"/>
+    <ROW File="German.json" Component_="Czech.json" FileName="GERMAN~1.JSO|German.json" Attributes="0" SourcePath="..\uploader\uploader\build\rel\local\German.json" SelfReg="false"/>
+    <ROW File="Italian.json" Component_="Czech.json" FileName="ITALIA~1.JSO|Italian.json" Attributes="0" SourcePath="..\uploader\uploader\build\rel\local\Italian.json" SelfReg="false"/>
+    <ROW File="Polish.json" Component_="Czech.json" FileName="POLISH~1.JSO|Polish.json" Attributes="0" SourcePath="..\uploader\uploader\build\rel\local\Polish.json" SelfReg="false"/>
+    <ROW File="PortugueseBr.json" Component_="Czech.json" FileName="PORTUG~1.JSO|PortugueseBr.json" Attributes="0" SourcePath="..\uploader\uploader\build\rel\local\PortugueseBr.json" SelfReg="false"/>
+    <ROW File="Russian.json" Component_="Czech.json" FileName="RUSSIA~1.JSO|Russian.json" Attributes="0" SourcePath="..\uploader\uploader\build\rel\local\Russian.json" SelfReg="false"/>
+    <ROW File="SimplifiedChinese.json" Component_="Czech.json" FileName="SIMPLI~1.JSO|SimplifiedChinese.json" Attributes="0" SourcePath="..\uploader\uploader\build\rel\local\SimplifiedChinese.json" SelfReg="false"/>
+    <ROW File="Slovenian.json" Component_="Czech.json" FileName="SLOVEN~1.JSO|Slovenian.json" Attributes="0" SourcePath="..\uploader\uploader\build\rel\local\Slovenian.json" SelfReg="false"/>
+    <ROW File="Swedish.json" Component_="Czech.json" FileName="SWEDIS~1.JSO|Swedish.json" Attributes="0" SourcePath="..\uploader\uploader\build\rel\local\Swedish.json" SelfReg="false"/>
+    <ROW File="Thai.json" Component_="Czech.json" FileName="THAI~1.JSO|Thai.json" Attributes="0" SourcePath="..\uploader\uploader\build\rel\local\Thai.json" SelfReg="false"/>
+    <ROW File="TraditionalChinese.json" Component_="Czech.json" FileName="TRADIT~1.JSO|TraditionalChinese.json" Attributes="0" SourcePath="..\uploader\uploader\build\rel\local\TraditionalChinese.json" SelfReg="false"/>
+    <ROW File="Turkish.json" Component_="Czech.json" FileName="TURKIS~1.JSO|Turkish.json" Attributes="0" SourcePath="..\uploader\uploader\build\rel\local\Turkish.json" SelfReg="false"/>
+    <ROW File="Ukrainian.json" Component_="Czech.json" FileName="UKRAIN~1.JSO|Ukrainian.json" Attributes="0" SourcePath="..\uploader\uploader\build\rel\local\Ukrainian.json" SelfReg="false"/>
+    <ROW File="Vietnamese.json" Component_="Czech.json" FileName="VIETNA~1.JSO|Vietnamese.json" Attributes="0" SourcePath="..\uploader\uploader\build\rel\local\Vietnamese.json" SelfReg="false"/>
+    <ROW File="icon.ico" Component_="RestSharp.xml" FileName="icon.ico" Attributes="0" SourcePath="..\uploader\uploader\build\rel\icon.ico" SelfReg="false"/>
+    <ROW File="contextmenudll.dll" Component_="contextmenudll.dll" FileName="CONTEX~1.DLL|contextmenudll.dll" Attributes="0" SourcePath="C:\Program Files (x86)\Caphyon\Advanced Installer 20.3.2\stubs\x86\contextmenudll.dll" SelfReg="false"/>
+    <ROW File="vt_portable.zip" Component_="RestSharp.xml" FileName="VT_POR~1.ZIP|vt_portable.zip" Attributes="0" SourcePath="..\uploader\uploader\build\rel\vt_portable.zip" SelfReg="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
+    <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="MsiBuild" BuildName="MsiBuild" BuildOrder="1" BuildType="0" PackageFolder="main-MsiBuild-SetupFiles" PackageFileName="vt_setup" Languages="en" InstallationType="4" UseLargeSchema="true"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DigCertStoreComponent">
+    <ROW DigitalCertificate="..\..\codesigning\code_cert_v2_sha1.pfx" TimeStampUrl="http://timestamp.digicert.com" SignerDescription="[|ProductName]" SignOptions="7" SignTool="0" UseSha256="1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="FolderDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\FolderDlg.aip"/>
+    <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceTypeDlg.aip"/>
+    <ROW Fragment="MaintenanceWelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceWelcomeDlg.aip"/>
+    <ROW Fragment="OptionalFeatsDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\OptionalFeatsDlg.aip"/>
+    <ROW Fragment="PreparePrereqDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\PreparePrereqDlg.aip"/>
+    <ROW Fragment="PrerequisitesDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\PrerequisitesDlg.aip"/>
+    <ROW Fragment="ProgressPrereqDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\ProgressPrereqDlg.aip"/>
+    <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;classic\fragments\SequenceDialogs.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="Themes.aip" Path="&lt;AI_FRAGS&gt;Themes.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;classic\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
+    <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRemoveDlg.aip"/>
+    <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRepairDlg.aip"/>
+    <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomeDlg.aip"/>
+    <ROW Fragment="WelcomePrereqDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomePrereqDlg.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="ExternalUICleaner.dll" SourcePath="&lt;AI_CUSTACTS&gt;ExternalUICleaner.dll"/>
+    <ROW Name="Prereq.dll" SourcePath="&lt;AI_CUSTACTS&gt;Prereq.dll"/>
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="WelcomePrereqDlg" Control_="Next" Event="NewDialog" Argument="PrerequisitesDlg" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
+    <ROW Dialog_="PrerequisitesDlg" Control_="Next" Event="EndDialog" Argument="Return" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
+    <ROW Dialog_="PrerequisitesDlg" Control_="Back" Event="NewDialog" Argument="WelcomePrereqDlg" Condition="AI_BOOTSTRAPPER" Ordering="1"/>
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="OptionalFeatsDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="OptionalFeatsDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="OptionalFeatsDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="OptionalFeatsDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="197"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="99"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_MAINT" Ordering="101"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_MAINT" Ordering="198"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="202"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="501"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceWelcomeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="NewDialog" Argument="VerifyRemoveDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="NewDialog" Argument="VerifyRepairDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="399" Options="1"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="299" Options="1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_PATCH" Ordering="201"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="299"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
+    <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
+    <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR" ManualDelete="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_AppSearchEx" Type="1" Source="Prereq.dll" Target="DoAppSearchEx"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH_ORIGINAL" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DoRemoveExternalUIStub" Type="3585" Source="ExternalUICleaner.dll" Target="DoRemoveExternalUIStub" WithoutSeq="true"/>
+    <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
+    <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
+    <ROW Action="AI_GetArpIconPath" Type="1" Source="aicustact.dll" Target="GetArpIconPath"/>
+    <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_PRESERVE_INSTALL_TYPE" Type="65" Source="aicustact.dll" Target="PreserveInstallType"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH" Target="[AI_SETUPEXEPATH_ORIGINAL]"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_RemoveExternalUIStub" Type="1" Source="ExternalUICleaner.dll" Target="RemoveExternalUIStub"/>
+    <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
+    <ROW Feature_="MainFeature" Component_="APPDIR"/>
+    <ROW Feature_="MainFeature" Component_="ProductInformation"/>
+    <ROW Feature_="MainFeature" Component_="DarkUI.dll"/>
+    <ROW Feature_="MainFeature" Component_="Newtonsoft.Json.dll"/>
+    <ROW Feature_="MainFeature" Component_="RestSharp.dll"/>
+    <ROW Feature_="MainFeature" Component_="RestSharp.xml"/>
+    <ROW Feature_="MainFeature" Component_="uploader.exe"/>
+    <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
+    <ROW Feature_="MainFeature" Component_="Czech.json"/>
+    <ROW Feature_="MainFeature" Component_="contextmenudll.dll"/>
+    <ROW Feature_="context_menu_sparse" Component_="MUIVerb_1"/>
+    <ROW Feature_="MainFeature" Component_="AI_CustomARPName"/>
+    <ROW Feature_="MainFeature" Component_="AI_DisableModify"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
+    <ROW Name="icon.exe" SourcePath="..\uploader\uploader\icon.ico" Index="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1502"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1397"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_AppSearchEx" Sequence="101"/>
+    <ROW Action="AI_GetArpIconPath" Sequence="1401"/>
+    <ROW Action="AI_RemoveExternalUIStub" Condition="(REMOVE=&quot;ALL&quot;) AND ((VersionNT &gt; 500) OR((VersionNT = 500) AND (ServicePackLevel &gt;= 4)))" Sequence="1501"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="AI_PRESERVE_INSTALL_TYPE" Sequence="199"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
+    <ROW Action="AI_DpiContentScale" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="102"/>
+    <ROW Action="AI_AppSearchEx" Sequence="101"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
+    <ROW Condition="((VersionNT &lt;&gt; 501) AND (VersionNT &lt;&gt; 502))" Description="[ProductName] cannot be installed on [WindowsTypeNT5XDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="MsiBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] cannot be installed on [WindowsTypeNT40Display]." DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="MsiBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 500)" Description="[ProductName] cannot be installed on [WindowsTypeNT50Display]." DescriptionLocId="AI.LaunchCondition.NoNT50" IsPredefined="true" Builds="MsiBuild"/>
+    <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="MsiBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="Caphyon_1" Root="2" Key="Software\Caphyon" Name="\"/>
+    <ROW Registry="Classes" Root="2" Key="Software\Classes" Name="\"/>
+    <ROW Registry="Comments" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Comments" Value="[ARPCOMMENTS]" Component_="AI_CustomARPName"/>
+    <ROW Registry="Contact" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Contact" Value="[ARPCONTACT]" Component_="AI_CustomARPName"/>
+    <ROW Registry="ContextMenu" Root="2" Key="Software\Caphyon\ContextMenu" Name="\"/>
+    <ROW Registry="CurrentVersion" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion" Name="\"/>
+    <ROW Registry="D3A826299BE64077AC2426BD7C956F83" Root="2" Key="Software\Caphyon\ContextMenu" Name="{D3A82629-9BE6-4077-AC24-26BD7C956F83}" Value="4F0C3FD6-D092-4D46-A3D0-0389882732B9:*" Component_="MUIVerb_1"/>
+    <ROW Registry="DisplayIcon" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="DisplayIcon" Value="[ARP_ICON_PATH]" Component_="AI_CustomARPName"/>
+    <ROW Registry="DisplayName" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="DisplayName" Value="[AI_PRODUCTNAME_ARP]" Component_="AI_CustomARPName"/>
+    <ROW Registry="DisplayVersion" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="DisplayVersion" Value="[ProductVersion]" Component_="AI_CustomARPName"/>
+    <ROW Registry="EstimatedSize" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="EstimatedSize" Value="#[AI_ARP_SIZE]" Component_="AI_CustomARPName" VirtualValue="#"/>
+    <ROW Registry="F0C3FD6D0924D46A3D00389882732B9" Root="2" Key="Software\Classes\*\shell\4F0C3FD6-D092-4D46-A3D0-0389882732B9" Name="\"/>
+    <ROW Registry="HelpLink" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="HelpLink" Value="[ARPHELPLINK]" Component_="AI_CustomARPName"/>
+    <ROW Registry="HelpTelephone" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="HelpTelephone" Value="[ARPHELPTELEPHONE]" Component_="AI_CustomARPName"/>
+    <ROW Registry="Icon_1" Root="2" Key="Software\Classes\*\shell\4F0C3FD6-D092-4D46-A3D0-0389882732B9" Name="Icon" Value="[#icon.ico]" Component_="MUIVerb_1"/>
+    <ROW Registry="InstallLocation" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="InstallLocation" Value="[APPDIR]" Component_="AI_CustomARPName"/>
+    <ROW Registry="MUIVerb_3" Root="2" Key="Software\Classes\*\shell\4F0C3FD6-D092-4D46-A3D0-0389882732B9" Name="MUIVerb" Value="Upload file to VirusTotal" Component_="MUIVerb_1"/>
+    <ROW Registry="Manufacturer" Root="-1" Key="Software\[Manufacturer]" Name="\"/>
+    <ROW Registry="Microsoft" Root="-1" Key="Software\Microsoft" Name="\"/>
+    <ROW Registry="ModifyPath" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="ModifyPath" Value="[AI_UNINSTALLER] /i [ProductCode] AI_UNINSTALLER_CTP=1" Component_="AI_CustomARPName"/>
+    <ROW Registry="NoModify" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="NoModify" Value="#1" Component_="AI_DisableModify" VirtualValue="#"/>
+    <ROW Registry="NoRepair" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="NoRepair" Value="#1" Component_="AI_CustomARPName" VirtualValue="#"/>
+    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
+    <ROW Registry="ProductName" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="\"/>
+    <ROW Registry="ProductNameProductVersion" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="\"/>
+    <ROW Registry="Publisher" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Publisher" Value="[Manufacturer]" Component_="AI_CustomARPName"/>
+    <ROW Registry="Readme" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Readme" Value="[ARPREADME]" Component_="AI_CustomARPName"/>
+    <ROW Registry="Software" Root="-1" Key="Software" Name="\"/>
+    <ROW Registry="Software_1" Root="2" Key="Software" Name="\"/>
+    <ROW Registry="URLInfoAbout" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="URLInfoAbout" Value="[ARPURLINFOABOUT]" Component_="AI_CustomARPName"/>
+    <ROW Registry="URLUpdateInfo" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="URLUpdateInfo" Value="[ARPURLUPDATEINFO]" Component_="AI_CustomARPName"/>
+    <ROW Registry="Uninstall" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall" Name="\"/>
+    <ROW Registry="UninstallPath" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="UninstallPath" Value="[AI_UNINSTALLER] /x [ProductCode] AI_UNINSTALLER_CTP=1" Component_="AI_CustomARPName"/>
+    <ROW Registry="UninstallString" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="UninstallString" Value="[AI_UNINSTALLER] /x [ProductCode] AI_UNINSTALLER_CTP=1" Component_="AI_CustomARPName"/>
+    <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+    <ROW Registry="VersionMajor" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="VersionMajor" Value="#0" Component_="AI_CustomARPName" VirtualValue="#"/>
+    <ROW Registry="VersionMinor" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="VersionMinor" Value="#2" Component_="AI_CustomARPName" VirtualValue="#"/>
+    <ROW Registry="Windows" Root="-1" Key="Software\Microsoft\Windows" Name="\"/>
+    <ROW Registry="_" Root="2" Key="Software\Classes\*" Name="\"/>
+    <ROW Registry="__6" Root="2" Key="Software\Classes\*\shell\4F0C3FD6-D092-4D46-A3D0-0389882732B9\command" Value="&quot;[#uploader.exe]&quot; &quot;%1&quot;" Component_="MUIVerb_1"/>
+    <ROW Registry="command" Root="2" Key="Software\Classes\*\shell\4F0C3FD6-D092-4D46-A3D0-0389882732B9\command" Name="\"/>
+    <ROW Registry="shell" Root="2" Key="Software\Classes\*\shell" Name="\"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="VirusTotalUploader" Directory_="SHORTCUTDIR" Name="VIRUST~1|VirusTotalUploader" Component_="uploader.exe" Target="[#uploader.exe]" Description="VirusTotalUploader" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="VirusTotalUploader_1" Directory_="DesktopFolder" Name="VIRUST~1|VirusTotalUploader" Component_="uploader.exe" Target="[#uploader.exe]" Description="VirusTotalUploader" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ATTRIBUTE name="UsedTheme" value="classic"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" VersionMax="[|ProductVersion]" Attributes="257" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.PreReqComponent">
+    <ROW PrereqKey="DC417C6DDE44CDB0139EE138C17B2C" DisplayName=".NET Framework 4.6" SetupFileUrl="http://download.microsoft.com/download/C/3/A/C3A5200B-D33C-47E9-9D70-2F7C65DAAD94/NDP46-KB3045557-x86-x64-AllOS-ENU.exe" Location="1" ExactSize="65444688" WinNTVersions="Windows Vista RTM x86, Windows Vista SP1 x86, Windows 7 RTM x86, Windows 10 x86" WinNT64Versions="Windows Vista RTM x64, Windows Vista SP1 x64, Windows 7 RTM x64, Windows Server 2008 R2 RTM x64, Windows 10 x64, Windows 11 x64, Windows Server x64" Operator="1" NoUiComLine="/q /norestart" Options="xy" MD5="88bc05e20114a4506f40c36911de92fa" TargetName=".NET Framework 4.6"/>
+    <ATTRIBUTE name="PrereqsOrder" value="DC417C6DDE44CDB0139EE138C17B2C"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.PreReqSearchComponent">
+    <ROW SearchKey="DC417C6DDE44CDB0139EE138C17B2CRelease" Prereq="DC417C6DDE44CDB0139EE138C17B2C" SearchType="9" SearchString="HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\Release" RefContent="G393296" Order="1" Property="PreReqSearch_DC417C6DDE44CDB0139EE1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.ShellContextMenuComponent">
+    <ROW ContextId="contextmenu_1" Type="0" RegName="MUIVerb_3" RegCommand="__6" RegIcon="Icon_1" RegType="D3A826299BE64077AC2426BD7C956F83" Flags="1" Dll="contextmenudll.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.SynchronizedFolderComponent">
+    <ROW Directory_="APPDIR" SourcePath="..\uploader\uploader\build\rel" Feature="MainFeature" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store" ExcludeFlags="6"/>
+  </COMPONENT>
+</DOCUMENT>

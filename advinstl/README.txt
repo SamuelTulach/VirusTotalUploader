@@ -1,0 +1,1 @@
+https://www.advancedinstaller.com/how-to-create-sparse-package.html
