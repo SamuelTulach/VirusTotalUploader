@@ -55,9 +55,13 @@ namespace uploader
             var files = (string[])e.Data.GetData(DataFormats.FileDrop);
             foreach (var file in files)
             {
-                var uploadForm = new UploadForm(this, settings, true, file);
-                uploadForm.Show();
-                this.Hide();
+                // takes care of the crashing when dragging folders
+                if (!File.GetAttributes(file).HasFlag(FileAttributes.Directory))
+                {
+                    var uploadForm = new UploadForm(this, settings, true, file);
+                    uploadForm.Show();
+                    this.Hide();
+                }
             }
         }
 
