@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
+using System.Net.Sockets;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DarkUI.Forms;
-using Microsoft.CSharp.RuntimeBinder;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using RestSharp;
 
 namespace uploader
@@ -20,15 +14,16 @@ namespace uploader
     public partial class UploadForm : DarkForm
     {
         private readonly bool _reopen;
-        private readonly string _fileName;
+        private readonly string _fileOrFolderName;
         private readonly MainForm _mainForm;
         private readonly Settings _settings;
         private Thread _uploadThread;
         private RestClient _client;
+        private string _resource;
 
-        public UploadForm(MainForm mainForm, Settings settings, bool reopen, string fileName)
+        public UploadForm(MainForm mainForm, Settings settings, bool reopen, string fileOrFolderName)
         {
-            _fileName = fileName;
+            _fileOrFolderName = fileOrFolderName;
             _mainForm = mainForm;
             _settings = settings;
             _reopen = reopen;
@@ -38,40 +33,24 @@ namespace uploader
 
         private void ChangeStatus(string text)
         {
-            if (InvokeRequired)
-            {
-                this.Invoke(new Action(() => ChangeStatus(text)));
-                return;
-            }
-
-            statusLabel.Text = text;
+            this.InvokeIfRequired(() => { statusLabel.Text = text; });
         }
 
         private void Finish(bool resetText)
         {
-            if (InvokeRequired)
-            {
-                this.Invoke(new Action(() => Finish(resetText)));
-                return;
-            }
+            this.InvokeIfRequired(() => {
+                if (resetText)
+                {
+                    ChangeStatus(LocalizationHelper.Base.Message_Idle);
+                }
 
-            if (resetText)
-            {
-                ChangeStatus(LocalizationHelper.Base.Message_Idle);
-            }
-
-            uploadButton.Text = LocalizationHelper.Base.UploadForm_Upload;
+                uploadButton.Text = LocalizationHelper.Base.UploadForm_Upload;
+            });
         }
 
         private void CloseWindow()
         {
-            if (InvokeRequired)
-            {
-                this.Invoke(new Action(() => CloseWindow()));
-                return;
-            }
-
-            this.Close();
+            this.InvokeIfRequired(Close);
         }
 
         private void Upload()
@@ -91,64 +70,91 @@ namespace uploader
             ChangeStatus(LocalizationHelper.Base.Message_Init);
             _client = new RestClient("https://www.virustotal.com");
 
-            if (!File.Exists(_fileName))
+            string[] paths;
+            if (Directory.Exists(_fileOrFolderName))
+            {
+                try
+                {
+                    paths = Directory.GetFiles(_fileOrFolderName, "*", SearchOption.AllDirectories);
+                }
+                catch (UnauthorizedAccessException)
+                {
+                    ChangeStatus(LocalizationHelper.Base.UploadForm_NoAccessToDirectory);
+                    Finish(false);
+                    return;
+                }
+            }
+            else if (File.Exists(_fileOrFolderName))
+            {
+                paths = new [] { _fileOrFolderName };
+            }
+            else
             {
                 throw new FileNotFoundException();
             }
 
             ChangeStatus(LocalizationHelper.Base.Message_Check);
-            var reportRequest = new RestRequest("vtapi/v2/file/report", Method.POST);
-            reportRequest.AddParameter("apikey", _settings.ApiKey);
-            reportRequest.AddParameter("resource", Utils.GetMD5(_fileName));
-
-            var reportResponse = _client.Execute(reportRequest);
-            var reportContent = reportResponse.Content;
-            dynamic reportJson = JsonConvert.DeserializeObject(reportContent);
-
-            try
+            var result = true;
+            foreach (var path in paths)
             {
-                var reportLink = reportJson.permalink.ToString();
-                Process.Start(reportLink);
+                var reportRequest = new RestRequest("vtapi/v2/file/report", Method.POST);
+                reportRequest.AddParameter("apikey", _settings.ApiKey);
+                reportRequest.AddParameter("resource", _resource);
 
-                if (_settings.DirectUpload) CloseWindow();
-            }
-            catch (RuntimeBinderException)
-            {
+                var reportResponse = _client.Execute(reportRequest);
+
+                // Here you can see quote or api key limits: var message = reportResponse.Headers.FirstOrDefault(x => x.Name == "X-Api-Message");
+                if (!string.IsNullOrEmpty(reportResponse.Content))
+                {
+                    try
+                    {
+                        var reportJson = (JObject)JsonConvert.DeserializeObject(reportResponse.Content);
+                        Process.Start(reportJson.SelectToken("permalink").Value<string>());
+                        continue;
+                    }
+                    catch
+                    {
+                        // not yet received, but weird exceptions out there
+                    }
+                }
+
                 // Json does not contain permalink which means it's a new file (or the request failed)
                 ChangeStatus(LocalizationHelper.Base.Message_Upload);
                 var scanRequest = new RestRequest("vtapi/v2/file/scan", Method.POST);
                 scanRequest.AddParameter("apikey", _settings.ApiKey);
-                scanRequest.AddFile("file", _fileName);
+                scanRequest.AddFile("file", path);
 
                 var scanResponse = _client.Execute(scanRequest);
-                var scanContent = scanResponse.Content;
-                // TODO: check for HTML (file too large)
-                dynamic scanJson = JsonConvert.DeserializeObject(scanContent);
-
+                if (scanResponse.ErrorException is OutOfMemoryException || scanResponse.ErrorException is IOException && scanResponse.ErrorException?.InnerException is SocketException sEx && sEx.ErrorCode == (int)SocketError.ConnectionReset)
+                {
+                    ChangeStatus(LocalizationHelper.Base.Message_FileTooBig);
+                    result = false;
+                    continue;
+                }
                 try
                 {
-                    string scanLink = scanJson.permalink.ToString();
+                    var scanJson = (JObject)JsonConvert.DeserializeObject(scanResponse.Content);
+                    var scanLink = scanJson.SelectToken("permalink").Value<string>();
 
                     // An example link can look like this:
                     // https://www.virustotal.com/gui/file/<filehash_or_resource_id>/detection/<scanid>
                     // If we don't remove the the scanid, then it will fail on new files since the scan did not finish
                     // Removing it like this will show the analysis progress for new files
                     scanLink = scanLink.Remove(scanLink.IndexOf("/detection"));
-                    
-                    Process.Start(scanLink);
 
-                    if (_settings.DirectUpload) CloseWindow();
+                    Process.Start(scanLink);
                 }
                 catch (Exception)
                 {
                     // Response does not contain permalink so it failed
                     ChangeStatus(LocalizationHelper.Base.Message_NoLink);
-                    Finish(false);
-                    return;
+                    result = false;
                 }
             }
 
-            Finish(true);
+            if (_settings.DirectUpload) CloseWindow();
+
+            Finish(result);
         }
 
         private void StartUploadThread()
@@ -161,17 +167,43 @@ namespace uploader
             }
             uploadButton.Text = LocalizationHelper.Base.UploadForm_Cancel;
 
+            _resource = mdTextbox.Text;
             _uploadThread = new Thread(Upload);
             _uploadThread.Start();
         }
 
         private void UploadForm_Load(object sender, EventArgs e)
         {
-            mdTextbox.Text = Utils.GetMD5(_fileName);
-            shaTextbox.Text = Utils.GetSHA1(_fileName);
-            sha2Textbox.Text = Utils.GetSHA256(_fileName);
+            if (Directory.Exists(_fileOrFolderName))
+            {
+                mdTextbox.Text = _fileOrFolderName;
+                shaTextbox.Visible = false;
+                sha2Textbox.Visible = false;
 
-            settingsGroup.Text = LocalizationHelper.Base.UploadForm_Info;
+                darkLabel1.Text = LocalizationHelper.Base.UploadForm_Folder;
+                darkLabel2.Visible = false;
+                darkLabel3.Visible = false;
+
+                settingsGroup.Text = LocalizationHelper.Base.UploadForm_FolderInfo;
+            }
+            else
+            {
+                settingsGroup.Text = LocalizationHelper.Base.UploadForm_FileInfo;
+
+                try
+                {
+                    mdTextbox.Text = Utils.GetMD5(_fileOrFolderName);
+                    shaTextbox.Text = Utils.GetSHA1(_fileOrFolderName);
+                    sha2Textbox.Text = Utils.GetSHA256(_fileOrFolderName);
+                }
+                catch (UnauthorizedAccessException)
+                {
+                    mdTextbox.Text = LocalizationHelper.Base.UploadForm_NoAccessToFile;
+                    shaTextbox.Text = LocalizationHelper.Base.UploadForm_NoAccessToFile;
+                    sha2Textbox.Text = LocalizationHelper.Base.UploadForm_NoAccessToFile;
+                }
+            }
+
             uploadButton.Text = LocalizationHelper.Base.UploadForm_Upload;
             statusLabel.Text = LocalizationHelper.Base.Message_Idle;
 

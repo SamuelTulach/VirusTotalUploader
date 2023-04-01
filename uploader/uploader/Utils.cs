@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace uploader
 {
-    internal class Utils
+    internal static class Utils
     {
         public static string GetMD5(string file)
         {
@@ -44,6 +42,18 @@ namespace uploader
                 var sha = new SHA1Managed();
                 var checksum = sha.ComputeHash(stream);
                 return BitConverter.ToString(checksum).Replace("-", string.Empty);
+            }
+        }
+
+        public static void InvokeIfRequired(this Control control, MethodInvoker action)
+        {
+            if (control.InvokeRequired)
+            {
+                control.Invoke(action);
+            }
+            else
+            {
+                action();
             }
         }
     }
