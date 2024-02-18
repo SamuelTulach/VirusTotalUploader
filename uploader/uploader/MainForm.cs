@@ -15,8 +15,9 @@ namespace uploader
     public partial class MainForm : DarkForm
     {
         private SettingsForm _settingsForm = new SettingsForm();
+		int maxArgs = 10;
 
-        public MainForm()
+		public MainForm()
         {
             InitializeComponent();
         }
@@ -52,26 +53,41 @@ namespace uploader
             var settings = Settings.LoadSettings();
 
             var files = (string[])e.Data.GetData(DataFormats.FileDrop);
-            foreach (var file in files)
-            {
-                var uploadForm = new UploadForm(this, settings, true, file);
-                uploadForm.Show();
-                this.Hide();
-            }
-        }
+			showMultipleUploadForms(files, settings);
+		}
+
+		private void showMultipleUploadForms(string[] files, Settings settings)
+		{
+			foreach (var file in files)
+			{
+				var uploadForm = new UploadForm(this, settings, true, file);
+				uploadForm.Show();
+				this.Hide();
+			}
+		}
 
         private void MainForm_Shown(object sender, EventArgs e)
         {
             var settings = Settings.LoadSettings();
             var args = Environment.GetCommandLineArgs();
 
-            if (args.Length == 2)
-            {
-                var file = args[1]; // Second argument because .NET puts program filename to the first
-                var uploadForm = new UploadForm(this, settings, false, file);
-                uploadForm.Show();
-                this.Hide();
-            }
-        }
+			if (args.Length >= 2 && args.Length <= maxArgs)
+			{
+				var files = args.ToList()
+								.GetRange(1, args.Count()-1).ToArray();
+				showMultipleUploadForms(files, settings);
+			}
+			else if (args.Length > maxArgs)
+			{
+				string message = "Number of files exceeds maximum";
+				string title = $"The app can handle max {maxArgs} files at once.";
+				MessageBoxButtons buttons = MessageBoxButtons.OK;
+				DialogResult result = MessageBox.Show(message, title, buttons);
+				if (result == DialogResult.Yes)
+				{
+					this.Close();
+				}
+			}
+		}
     }
 }
