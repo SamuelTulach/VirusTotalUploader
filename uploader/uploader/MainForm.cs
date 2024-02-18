@@ -51,8 +51,10 @@ namespace uploader
         {
             var settings = Settings.LoadSettings();
 
-            var files = (string[])e.Data.GetData(DataFormats.FileDrop);
-            foreach (var file in files)
+            var arguments = (string[])e.Data.GetData(DataFormats.FileDrop);
+			var files = FileUtil.GetFiles(arguments);
+
+			foreach (var file in files)
             {
                 var uploadForm = new UploadForm(this, settings, true, file);
                 uploadForm.Show();
