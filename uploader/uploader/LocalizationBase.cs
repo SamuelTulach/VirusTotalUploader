@@ -27,6 +27,7 @@ namespace uploader
         public string UploadForm_NoApiKey = "You have not entered an API key. Please go to settings and add one.";
         public string UploadForm_InvalidLength = "Invalid API key length. The key must contain 64 characters.";
         public string UploadForm_InvalidKey = "Invalid API key";
+        public string UploadForm_Error = "Error";
 
         public string Message_Idle = "Idle.";
         public string Message_Init = "Initializing...";
