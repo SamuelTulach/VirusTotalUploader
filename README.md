@@ -1,10 +1,5 @@
 <div><p align="center"><img src="https://raw.githubusercontent.com/SamuelTulach/VirusTotalUploader/master/uploader/uploader/icon.ico" width="75" height="75" /></p><h3 align="center">VirusTotal Uploader</h3></div>
 <p align="center">Open-source desktop uploader for VirusTotal.</p>
-<p align="center">
-<a href="https://gitter.im/VirusTotalUploader/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"><img src="https://badges.gitter.im/VirusTotalUploader/Lobby.svg" href="https://gitter.im/VirusTotalUploader/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge" /></a>
-<a href="https://ci.appveyor.com/project/SamuelTulach/virustotaluploader"><img src="https://ci.appveyor.com/api/projects/status/ulpfhv1v32bhwaju?svg=true" href="https://ci.appveyor.com/project/SamuelTulach/virustotaluploader" /></a>
-<a href="https://www.codacy.com/manual/SamuelTulach/VirusTotalUploader?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=SamuelTulach/VirusTotalUploader&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/4c55d4a2ca28421b989d6f16ec0399bd" href="https://www.codacy.com/manual/SamuelTulach/VirusTotalUploader?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=SamuelTulach/VirusTotalUploader&amp;utm_campaign=Badge_Grade" /></a>
-</p>
 
 #### Warning
 This is not officially supported application. It was created because official VirusTotal desktop app is unmaintained. If you are afraid, you can build it from source by yourself. Also please don't download it from any third-party sites.
